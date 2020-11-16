@@ -1,7 +1,7 @@
 # **Who's That Guy!** 
 ## *Star Trek Edition* 
 
-![startrekinsignia](https://ids.si.edu/ids/deliveryService?id=NASM-A20140238000-NASM2016-02427&max=900)
+![startrekinsignia](https://ids.si.edu/ids/deliveryService?id=NASM-A20140238000-NASM2016-02427&max=300)
 
 ### The Trivia Game for everytime you've seen an actor and wondered aloud, *"Wait, who's that guy again?"*
 
