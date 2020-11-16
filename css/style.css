@@ -1,0 +1,7 @@
+body {
+    background-image: linear-gradient(to left top, #edf809, #e8b612, #c97b2a, #964c31, #592a29, #532c36, #482f3f, #3d3341, #555c7b, #558eb5, #44c4df, #5ffbf1);
+}
+
+.game-screen {
+    background-image: radial-gradient(circle, #edf809, #e8b612, #c97b2a, #964c31, #592a29, #532c36, #482f3f, #3d3341, #555c7b, #558eb5, #44c4df, #5ffbf1);
+}
