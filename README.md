@@ -1,7 +1,7 @@
 # **Who's That Guy!** 
 ## *Star Trek Edition* 
 
-![star trek insignia](https://icon-library.net/images/star-trek-icon-png/star-trek-icon-png-15.jpg)
+![star trek insignia](https://icon-library.net/icon/star-trek-icon-png-15.html)
 
 ### The Trivia Game for everytime you've seen an actor and wondered aloud, *"Wait, who's that guy again?"*
 
