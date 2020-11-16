@@ -6,7 +6,7 @@
 Join the fun with this interactive quiz game that endulges that deepest itch of not quite being able to put your finger on where you've seen that guy before. This time, with Star Trek characters! Some of these roles are one off cameos, some are recurring characters, but they all have one thing in common: You've seen that freaking guy before, what's his name again?
 
 ## Wire-Frame
-![image](https://imgur.com/a/YhY7IyF)
+![wireframe](https://i.imgur.com/anlsPI5.jpg)
 
 ### Goals
 
