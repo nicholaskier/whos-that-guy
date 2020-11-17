@@ -1,7 +1,43 @@
 body {
-    background-image: linear-gradient(to left top, #edf809, #e8b612, #c97b2a, #964c31, #592a29, #532c36, #482f3f, #3d3341, #555c7b, #558eb5, #44c4df, #5ffbf1);
+    background-image: url(https://i.imgur.com/2Q32AEy.jpg);   
 }
 
-.game-screen {
-    background-image: radial-gradient(circle, #edf809, #e8b612, #c97b2a, #964c31, #592a29, #532c36, #482f3f, #3d3341, #555c7b, #558eb5, #44c4df, #5ffbf1);
+#title {
+    color: white;
+    font-size: 50px;
+    display: grid;
+    place-items: center;
+}
+
+#game-screen {
+    background-image: url(https://i.imgur.com/1Is6J7W.jpg);
+    background-size: 500px;
+    background-repeat: no-repeat;
+    width: 500px;
+    height: 700px;
+    display: grid;
+    place-items: center;
+    margin: auto;
+    grid-template-columns: auto auto auto ;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: 
+    'image image image'
+    'timer image counter'
+    'question question question'
+    'answer answer answer answer'
+    
+    ;
+}
+
+#timer {
+    grid-area: 'timer';
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 100%;
+    background: #7ADAF6 repeat 5px 50%;
+    border-bottom: 1px solid #4F8EA1;
+    transition: all .3s ease-out;
+    margin: 
+
 }
