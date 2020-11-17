@@ -9,18 +9,34 @@ var ranks = {
     rank4 : `10 CORRECT. Oh Captain, MY Captain! You're never in the wrong, even if everyone under you thinks you're making a terrible mistake.`
 }
 
-const questions = {
-    ['Wait, who's he again?',
-    'Hold up, I know this one..',
-    'OH! Oh, yeah! THAT guy! ...um...',
-    'Well this is an easy one...',
-    'How am I supposed to tell under all that loaf?',
-    'HOLD UP ... holdupholdupholdup',
-    '...it's on the tip of my tongue',
-    'I've definitely seen THAT dude',
-    'GUH! Where is he FROM?!',
-    'Ok, last one. I've got this...']
+var ques1 = {
+    question : `Wait, who's he again?`,
+    correctAns : `Wallace Shawn (Princess Bride)`,
+    incorrectAns1 : `Tony Todd (Candyman)`,
+    incorrectAns2 : `Jonathan Banks (Breaking Bad)`,
+    incorrectAns3 : `Kurtwood Smith (That 70's Show)`
 }
+
+var ques2 = {
+    question : `Hold up, I know this one...`,
+    correctAns : `Christopher Lloyd (Back to the Future)`,
+    incorrectAns1 : `Scott Thompson (Kids in the Hall)`,
+    incorrectAns2 : `Jim O'Heir (Parks and Rec)`,
+    incorrectAns3 : `Jason Alexander (Seinfeld)`
+}
+
+// const questions = {
+//     ['Wait, who's he again?',
+//     'Hold up, I know this one..',
+//     'OH! Oh, yeah! THAT guy! ...um...',
+//     'Well this is an easy one...',
+//     'How am I supposed to tell under all that loaf?',
+//     'HOLD UP ... holdupholdupholdup',
+//     '...it's on the tip of my tongue',
+//     'I've definitely seen THAT dude',
+//     'GUH! Where is he FROM?!',
+//     'Ok, last one. I've got this...']
+// }
 
 // array of questions, array of answers, array of images(?)
  
