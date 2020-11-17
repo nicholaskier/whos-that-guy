@@ -1,6 +1,15 @@
 
 /*-------------------------------- Constants --------------------------------*/
 
+
+
+
+ 
+
+/*---------------------------- Variables (state) ----------------------------*/
+let round, time, count
+
+
 var ranks = {
     rank0 : `0 CORRECT. Such a Neelix. I mean, we can make you ship's ambassador or something if it would make you feel better`,
     rank1 : `1-3 CORRECT. Congrats, Ensign! People might call you 'pretty useless', but hey, at least they call you pretty.`,
@@ -18,45 +27,79 @@ var ques1 = {
 }
 
 var ques2 = {
-    question : `Hold up, I know this one...`,
+    question : `Hold up, you know this one...`,
     correctAns : `Christopher Lloyd (Back to the Future)`,
     incorrectAns1 : `Scott Thompson (Kids in the Hall)`,
     incorrectAns2 : `Jim O'Heir (Parks and Rec)`,
     incorrectAns3 : `Jason Alexander (Seinfeld)`
 }
 
-// const questions = {
-//     ['Wait, who's he again?',
-//     'Hold up, I know this one..',
-//     'OH! Oh, yeah! THAT guy! ...um...',
-//     'Well this is an easy one...',
-//     'How am I supposed to tell under all that loaf?',
-//     'HOLD UP ... holdupholdupholdup',
-//     '...it's on the tip of my tongue',
-//     'I've definitely seen THAT dude',
-//     'GUH! Where is he FROM?!',
-//     'Ok, last one. I've got this...']
-// }
-
-// array of questions, array of answers, array of images(?)
- 
-
-/*---------------------------- Variables (state) ----------------------------*/
-let round, time, count
-
-init()
-
-
-
-
-function init(){
-    round = 0
-    time = 60
-    count = 0
-    render()
-    timer()
-
+var ques3 = {
+    question : `Oh! Oh, yeah! THAT guy! ...um...`,
+    correctAns : `Iggy Pop (Iggy Pop)`,
+    incorrectAns1 : `Mick Fleetwood (Fleetwood Mac)`,
+    incorrectAns2 : `Wallace Shawn (Princess Bride)`,
+    incorrectAns3 : `Tony Todd (Candyman)`,
 }
+
+var ques4 = {
+    question : `Well, this is an easy one ...`,
+    correctAns : `Jason Alexander (Seinfeld)`,
+    incorrectAns1 : `Jim O'Heir (Parks and Rec)`,
+    incorrectAns2 : `Kurtwood Smith (Kids in the Hall)`,
+    incorrectAns3 : `Iggy Pop (Iggy Pop)`
+}
+
+var ques5 = {
+    question : `How are you supposed to tell under all that loaf?`,
+    correctAns : `Mick Fleetwood (Fleetwood Mac)`,
+    incorrectAns1 : `Kurtwood Smith (That 70's Show)`,
+    incorrectAns2 : `Christopher Lloyd (Back to the Future)`,
+    incorrectAns3 : `Tony Todd (Candyman)`
+}
+
+var ques6 = {
+    question : `HOLD UP...holdupholdupholdup..`,
+    correctAns : `Jonathan Banks (Breaking Bad)`,
+    incorrectAns1 : `Scott Thompson (Kids in the Hall)`,
+    incorrectAns2 : `Jim O'Heir (Parks and Rec)`,
+    incorrectAns3 : `Wallace Shawn (Princess Bride)`
+}
+
+var ques7 = {
+    question : `...it's on the tip of your tongue`,
+    correctAns : `Scott Thompson (Kids in the Hall)`,
+    incorrectAns1 : `Mick Fleetwood (Fleetwood Mac)`,
+    incorrectAns2 : `Christopher Lloyd (Back to the Future)`,
+    incorrectAns3 : `Jason Alexander (Seinfeld)`
+}
+
+var ques8 = {
+    question = `You've definitely seen THAT dude.`,
+    correctAns = `Kurtwood Smith (That 70's Show)`,
+    incorrectAns1 = `Wallace Shawn (Princess Bride)`,
+    incorrectAns2 = `Iggy Pop (Iggy Pop)`,
+    incorrectAns3 = `Mick Fleetwood (Fleetwood Mac)`
+}
+
+var ques9 = {
+    question = `GUH! Where is he FROM?!`,
+    correctAns = `Jim O'Heir (Parks and Rec)`,
+    incorrectAns1 = `Jason Alexander (Seinfeld)`,
+    incorrectAns2 = `Scott Thompson (Kids in the Hall)`,
+    incorrectAns3 = `Kurtwood Smith (That 70's Show)`
+}
+
+var ques10 = {
+    question = `Ok, last one. You've got this!`,
+    correctAns = `Tony Todd (Candyman)`,
+    incorrectAns1 = `Mick Fleetwood (Fleetwood Mac)`,
+    incorrectAns2 = `Wallace Shawn (Princess Bride)`,
+    incorrectAns3 = `Jonathan Banks (Breaking Bad)`
+}
+
+
+
 // variables for 4-5 different outcomes depending on total score at end of game
 // array of questions, array of answers, array of images(?)
 /*------------------------ Cached Element References ------------------------*/
@@ -80,6 +123,25 @@ const choices = document.getElementsByClassName('answer')
 // for a mouse-click
 // Clicks for start box, each answer box, submit button, reset button 
 /*-------------------------------- Functions --------------------------------*/
+
+
+init()
+
+
+
+
+function init(){
+    round = 0
+    time = 60
+    count = 0
+    render()
+    timer()
+
+}
+
+
+
+
 
 function gameWin() {
     game.timer.stop()
