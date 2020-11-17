@@ -1,12 +1,12 @@
 
 /*-------------------------------- Constants --------------------------------*/
 
-const ranks = {
-    ['0 CORRECT. Such a Neelix. I mean, we can make you 'ship's ambassador or something if it would make you feel better',
-    '1-3 CORRECT. Congrats, Ensign! People might call you 'pretty useless', but hey, at least they call you pretty.',
-    '4-6 CORRECT. Congrats, Lieutenant! You can sit in the big chair when literally everyone else on the ship dissappears if you accidentally kill God or something.',
-    '7-9 CORRECT. Congrats, Commander! Try to keep it in your pants!',
-    '10 CORRECT. Oh Captain, MY Captain! You're never in the wrong, even if everyone under you thinks you're making a terrible mistake.']
+var ranks = {
+    rank0 : `0 CORRECT. Such a Neelix. I mean, we can make you ship's ambassador or something if it would make you feel better`,
+    rank1 : `1-3 CORRECT. Congrats, Ensign! People might call you 'pretty useless', but hey, at least they call you pretty.`,
+    rank2 : `4-6 CORRECT. Congrats, Lieutenant! You can sit in the big chair when literally everyone else on the ship dissappears if you accidentally kill God or something.`,
+    rank3 : `7-9 CORRECT. Congrats, Commander! Try to keep it in your pants!`,
+    rank4 : `10 CORRECT. Oh Captain, MY Captain! You're never in the wrong, even if everyone under you thinks you're making a terrible mistake.`
 }
 
 const questions = {
@@ -65,6 +65,17 @@ const choices = document.getElementsByClassName('answer')
 // Clicks for start box, each answer box, submit button, reset button 
 /*-------------------------------- Functions --------------------------------*/
 
+function gameWin() {
+    game.timer.stop()
+}
+
+function gameOver() {
+    game.timer.stop()
+}
+
+function gameStart(){
+    game.timer.start()
+}
 
 // total answers correct
     // if answer checked = correct, add to tally (up to 10)
