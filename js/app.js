@@ -112,6 +112,7 @@ const answerBtns = document.getElementsByClassName('answer')
 const restartBtn = document.getElementById('restart')
 const picture = document.getElementById('image')
 const count = document.getElementById('counter')
+const darkMode = document.getElementById('dark-mode')
 
 
 
@@ -125,7 +126,7 @@ const count = document.getElementById('counter')
 startBtn.addEventListener('click', startGame)
 answerBtns.addEventListener('click', checkAnswer)
 restartBtn.addEventListener('click', init)
-
+darkMode.addEventListener('click', switchPallette)
 
 // This is where you should put the event listener
 // for a mouse-click
@@ -188,7 +189,9 @@ function checkRank() {
 }
 
 
+function switchPallette() {
 
+}
 
 // function gameWin() {
 //     game.timer.stop()
