@@ -7,7 +7,17 @@
  
 
 /*---------------------------- Variables (state) ----------------------------*/
-let round, time, count
+let timeLeft = 60
+
+let timer = setInterval(function(){
+    document.getElementById('timer').textContent = timeLeft 
+    timeLeft -= 1
+    if (timeLeft < 0){
+        document.getElementById('timer').textConent = ''
+    }
+},1000)
+
+let round, count
 
 
 let ranks = {
@@ -133,7 +143,7 @@ const darkMode = document.getElementById('dark-mode')
 /*----------------------------- Event Listeners -----------------------------*/
 
 
-startBtn.addEventListener('click', startGame)
+startBtn.addEventListener('click', change)
 answerBtns.addEventListener('click', checkAnswer)
 restartBtn.addEventListener('click', init)
 darkMode.addEventListener('click', switchPallette)
@@ -157,12 +167,19 @@ function init(){
 
 }
 
+function change(evt){
+    if (evt.type == 'click'){
+    startBtn.style.visibility ='hidden'
+    getElementById('game-screen').stlye.visibility ='visible'
+    startGame()
+    }
+}
 
 
 function startGame() {
-    startBtn.style.visibility = 'hidden'
-    getElementById('game-screen').stlye.visibility = 'visible'
-    getElementById('question-box').style.visibility = 'visible'
+    // startBtn.style.visibility = 'hidden'
+    // getElementById('game-screen').stlye.visibility = 'visible'
+    // getElementById('question-box').style.visibility = 'visible'
     round = 1
     // timer begins
     render()
