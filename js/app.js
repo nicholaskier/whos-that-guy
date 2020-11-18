@@ -108,10 +108,9 @@ var ques10 = {
 const startBtn = document.getElementById('start')
 const question = document.getElementById('question')
 const rank = document.getElementById('ranking')
-const answer1Btn = document.getElementsById('answer1')
-const answer2Btn = document.getElementById('answer2')
-const answer3Btn = document.getElementById('answer3')
-const answer4Btn = document.getElementById('answer4')
+const answerBtns = document.getElementsByClassName('answer')
+const restartBtn = document.getElementById('restart')
+
 
 
 
@@ -121,7 +120,9 @@ const answer4Btn = document.getElementById('answer4')
 /*----------------------------- Event Listeners -----------------------------*/
 
 
-
+startBtn.addEventListener('click', startGame)
+answerBtns.addEventListener('click', checkAnswer)
+restartBtn.addEventListener('click', init)
 
 
 // This is where you should put the event listener
@@ -142,6 +143,20 @@ function init(){
     render()
     timer()
 
+}
+
+
+
+function startGame() {
+    round = 1
+    // timer begins
+    render()
+    // first question and set of answers populate
+}
+
+
+function checkAnswer(EventTarget) {
+    if ()
 }
 
 
