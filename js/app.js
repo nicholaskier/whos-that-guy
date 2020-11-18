@@ -11,11 +11,11 @@ let round, time, count
 
 
 var ranks = {
-    rank0 : `0 CORRECT. Such a Neelix. I mean, we can make you ship's ambassador or something if it would make you feel better`,
-    rank1 : `1-3 CORRECT. Congrats, Ensign! People might call you 'pretty useless', but hey, at least they call you pretty.`,
-    rank2 : `4-6 CORRECT. Congrats, Lieutenant! You can sit in the big chair when literally everyone else on the ship dissappears if you accidentally kill God or something.`,
-    rank3 : `7-9 CORRECT. Congrats, Commander! Try to keep it in your pants!`,
-    rank4 : `10 CORRECT. Oh Captain, MY Captain! You're never in the wrong, even if everyone under you thinks you're making a terrible mistake.`
+    neelix : `0 CORRECT. Such a Neelix. I mean, we can make you ship's ambassador or something if it would make you feel better`,
+    ensign : `1-3 CORRECT. Congrats, Ensign! People might call you 'pretty useless', but hey, at least they call you pretty.`,
+    lieutenant : `4-6 CORRECT. Congrats, Lieutenant! You can sit in the big chair when literally everyone else on the ship dissappears if you accidentally kill God or something.`,
+    commander : `7-9 CORRECT. Congrats, Commander! Try to keep it in your pants!`,
+    captain : `10 CORRECT. Oh Captain, MY Captain! You're never in the wrong, even if everyone under you thinks you're making a terrible mistake.`
 }
 
 var ques1 = {
@@ -111,6 +111,7 @@ const rank = document.getElementById('ranking')
 const answerBtns = document.getElementsByClassName('answer')
 const restartBtn = document.getElementById('restart')
 const picture = document.getElementById('image')
+const count = document.getElementById('counter')
 
 
 
@@ -162,25 +163,45 @@ function checkAnswer(EventTarget) {
 }
 
 function render() {
-    if (round = 1){
-
+    if (round == 11 || time == 0){
+        checkRank()
     }
 }
 
 
 
 
-function gameWin() {
-    game.timer.stop()
+function checkRank() {
+    if (counter == 0){
+        return rank.neelix
+    }
+    if (counter > 0 && counter <= 3){
+        return rank.ensign
+    }
+    if (counter > 3 && counter <= 6){
+        return rank.lieutenant
+    }
+    if (counter > 6 && counter <= 9){
+        return rank.commander
+    }else{
+        return rank.captain
+    }
 }
 
-function gameOver() {
-    game.timer.stop()
-}
 
-function gameStart(){
-    game.timer.start()
-}
+
+
+// function gameWin() {
+//     game.timer.stop()
+// }
+
+// function gameOver() {
+//     game.timer.stop()
+// }
+
+// function gameStart(){
+//     game.timer.start()
+// }
 
 // total answers correct
     // if answer checked = correct, add to tally (up to 10)
