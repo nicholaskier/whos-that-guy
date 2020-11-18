@@ -1,0 +1,16 @@
+body {
+    margin: 30px;
+    display: grid;
+    place-items: center;
+}
+
+#game-screen {
+    margin: 40px;
+    display: grid;
+    place-items: center;
+}
+
+#question-box {
+    margin: 40px;
+    display: grid;
+}

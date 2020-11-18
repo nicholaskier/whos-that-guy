@@ -105,10 +105,13 @@ var ques10 = {
 /*------------------------ Cached Element References ------------------------*/
 
 
-
+const startBtn = document.getElementById('start')
 const question = document.getElementById('question')
 const rank = document.getElementById('ranking')
-const choices = document.getElementsByClassName('answer')
+const answer1Btn = document.getElementsById('answer1')
+const answer2Btn = document.getElementById('answer2')
+const answer3Btn = document.getElementById('answer3')
+const answer4Btn = document.getElementById('answer4')
 
 
 
@@ -116,6 +119,8 @@ const choices = document.getElementsByClassName('answer')
 //cache buttons, image, timer(?), score count  
 
 /*----------------------------- Event Listeners -----------------------------*/
+
+
 
 
 
