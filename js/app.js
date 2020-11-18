@@ -160,6 +160,9 @@ function init(){
 
 
 function startGame() {
+    startBtn.style.visibility = 'hidden'
+    getElementById('game-screen').stlye.visibility = 'visible'
+    getElementById('question-box').style.visibility = 'visible'
     round = 1
     // timer begins
     render()

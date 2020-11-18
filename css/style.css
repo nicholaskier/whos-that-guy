@@ -4,13 +4,27 @@ body {
     place-items: center;
 }
 
+#start {
+    font-size: 60px;
+    place-items: center;
+    transform: translate(0%, 250%) ;
+}
+
 #game-screen {
+    background: lightgrey;
+    visibility: hidden;
     margin: 40px;
     display: grid;
     place-items: center;
 }
 
 #question-box {
+    visibility: hidden;
     margin: 40px;
     display: grid;
 }
+
+#restart {
+    visibility: hidden;
+}
+
