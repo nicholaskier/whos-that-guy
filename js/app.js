@@ -110,6 +110,7 @@ const question = document.getElementById('question')
 const rank = document.getElementById('ranking')
 const answerBtns = document.getElementsByClassName('answer')
 const restartBtn = document.getElementById('restart')
+const picture = document.getElementById('image')
 
 
 
@@ -156,9 +157,15 @@ function startGame() {
 
 
 function checkAnswer(EventTarget) {
-    if ()
+    // if answer at event target is the correct answer, add 1 to counter, celebrate, move to next round
+    // if answer at event target is the incorrect answer, shake answer button, move to next round
 }
 
+function render() {
+    if (round = 1){
+
+    }
+}
 
 
 
@@ -181,8 +188,7 @@ function gameStart(){
 // timer
     // on click of start button, begin timer of 60 seconds
     //  end game after 60 seconds, no matter what question they are on
-// submit
-    // on click, submit answer that has been selected
+
 // check Answer
     // on submit click, check selected answer vs. the possible answers and signify which answer was the correct one, despite user input
 // restart
