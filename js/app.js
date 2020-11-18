@@ -10,7 +10,7 @@
 let round, time, count
 
 
-var ranks = {
+let ranks = {
     neelix : `0 CORRECT. Such a Neelix. I mean, we can make you ship's ambassador or something if it would make you feel better`,
     ensign : `1-3 CORRECT. Congrats, Ensign! People might call you 'pretty useless', but hey, at least they call you pretty.`,
     lieutenant : `4-6 CORRECT. Congrats, Lieutenant! You can sit in the big chair when literally everyone else on the ship dissappears if you accidentally kill God or something.`,
@@ -18,7 +18,7 @@ var ranks = {
     captain : `10 CORRECT. Oh Captain, MY Captain! You're never in the wrong, even if everyone under you thinks you're making a terrible mistake.`
 }
 
-var ques1 = {
+let ques1 = {
     question : `Wait, who's he again?`,
     correctAns : `Wallace Shawn (Princess Bride)`,
     incorrectAns1 : `Tony Todd (Candyman)`,
@@ -27,7 +27,7 @@ var ques1 = {
     image : `url(https://i.imgur.com/B26FTeF.jpeg)`
 }
 
-var ques2 = {
+let ques2 = {
     question : `Hold up, you know this one...`,
     correctAns : `Christopher Lloyd (Back to the Future)`,
     incorrectAns1 : `Scott Thompson (Kids in the Hall)`,
@@ -36,7 +36,7 @@ var ques2 = {
     image : `url(https://i.imgur.com/gSkLXBv.jpg)`
 }
 
-var ques3 = {
+let ques3 = {
     question : `Oh! Oh, yeah! THAT guy! ...um...`,
     correctAns : `Iggy Pop (Iggy Pop)`,
     incorrectAns1 : `Mick Fleetwood (Fleetwood Mac)`,
@@ -45,7 +45,7 @@ var ques3 = {
     image : `url(https://i.imgur.com/ibdfNnj.jpeg)`
 }
 
-var ques4 = {
+let ques4 = {
     question : `Well, this is an easy one ...`,
     correctAns : `Jason Alexander (Seinfeld)`,
     incorrectAns1 : `Jim O'Heir (Parks and Rec)`,
@@ -54,7 +54,7 @@ var ques4 = {
     image : `url(https://i.imgur.com/4yTTeBh.jpeg)`
 }
 
-var ques5 = {
+let ques5 = {
     question : `How are you supposed to tell under all that loaf?`,
     correctAns : `Mick Fleetwood (Fleetwood Mac)`,
     incorrectAns1 : `Kurtwood Smith (That 70's Show)`,
@@ -63,7 +63,7 @@ var ques5 = {
     image : `url(https://i.imgur.com/nFaIXtA.jpeg)`
 }
 
-var ques6 = {
+let ques6 = {
     question : `HOLD UP...holdupholdupholdup..`,
     correctAns : `Jonathan Banks (Breaking Bad)`,
     incorrectAns1 : `Scott Thompson (Kids in the Hall)`,
@@ -72,7 +72,7 @@ var ques6 = {
     image : `url(https://i.imgur.com/ZRsi948.jpg)`
 }
 
-var ques7 = {
+let ques7 = {
     question : `...it's on the tip of your tongue`,
     correctAns : `Scott Thompson (Kids in the Hall)`,
     incorrectAns1 : `Mick Fleetwood (Fleetwood Mac)`,
@@ -81,7 +81,7 @@ var ques7 = {
     image : `url(https://i.imgur.com/ioO8MuI.jpg)`
 }
 
-var ques8 = {
+let ques8 = {
     question = `You've definitely seen THAT dude.`,
     correctAns = `Kurtwood Smith (That 70's Show)`,
     incorrectAns1 = `Wallace Shawn (Princess Bride)`,
@@ -90,7 +90,7 @@ var ques8 = {
     image : `url(https://i.imgur.com/hKkTAUz.jpg)`
 }
 
-var ques9 = {
+let ques9 = {
     question = `GUH! Where is he FROM?!`,
     correctAns = `Jim O'Heir (Parks and Rec)`,
     incorrectAns1 = `Jason Alexander (Seinfeld)`,
@@ -99,7 +99,7 @@ var ques9 = {
     image : `url(https://i.imgur.com/7uQuyO4.jpg)`
 }
 
-var ques10 = {
+let ques10 = {
     question = `Ok, last one. You've got this!`,
     correctAns = `Tony Todd (Candyman)`,
     incorrectAns1 = `Mick Fleetwood (Fleetwood Mac)`,
@@ -196,18 +196,18 @@ function render() {
 
 function checkRank() {
     if (counter == 0){
-        return rank.neelix
+        rank.innerContent = `${ranks.neelix}`
     }
     if (counter > 0 && counter <= 3){
-        return rank.ensign
+        rank.innerContent =  `${ranks.ensign}`
     }
     if (counter > 3 && counter <= 6){
-        return rank.lieutenant
+        rank.innerContent =  `${ranks.lieutenant}`
     }
     if (counter > 6 && counter <= 9){
-        return rank.commander
+        rank.innerContent =  `${ranks.commander}`
     }else{
-        return rank.captain
+        rank.innerContent =  `${ranks.captain}`
     }
 }
 
