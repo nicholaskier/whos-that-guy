@@ -23,7 +23,8 @@ var ques1 = {
     correctAns : `Wallace Shawn (Princess Bride)`,
     incorrectAns1 : `Tony Todd (Candyman)`,
     incorrectAns2 : `Jonathan Banks (Breaking Bad)`,
-    incorrectAns3 : `Kurtwood Smith (That 70's Show)`
+    incorrectAns3 : `Kurtwood Smith (That 70's Show)`,
+    image : `url(https://i.imgur.com/B26FTeF.jpeg)`
 }
 
 var ques2 = {
@@ -31,7 +32,8 @@ var ques2 = {
     correctAns : `Christopher Lloyd (Back to the Future)`,
     incorrectAns1 : `Scott Thompson (Kids in the Hall)`,
     incorrectAns2 : `Jim O'Heir (Parks and Rec)`,
-    incorrectAns3 : `Jason Alexander (Seinfeld)`
+    incorrectAns3 : `Jason Alexander (Seinfeld)`,
+    image : `url(https://i.imgur.com/gSkLXBv.jpg)`
 }
 
 var ques3 = {
@@ -40,6 +42,7 @@ var ques3 = {
     incorrectAns1 : `Mick Fleetwood (Fleetwood Mac)`,
     incorrectAns2 : `Wallace Shawn (Princess Bride)`,
     incorrectAns3 : `Tony Todd (Candyman)`,
+    image : `url(https://i.imgur.com/ibdfNnj.jpeg)`
 }
 
 var ques4 = {
@@ -47,7 +50,8 @@ var ques4 = {
     correctAns : `Jason Alexander (Seinfeld)`,
     incorrectAns1 : `Jim O'Heir (Parks and Rec)`,
     incorrectAns2 : `Kurtwood Smith (Kids in the Hall)`,
-    incorrectAns3 : `Iggy Pop (Iggy Pop)`
+    incorrectAns3 : `Iggy Pop (Iggy Pop)`,
+    image : `url(https://i.imgur.com/4yTTeBh.jpeg)`
 }
 
 var ques5 = {
@@ -55,7 +59,8 @@ var ques5 = {
     correctAns : `Mick Fleetwood (Fleetwood Mac)`,
     incorrectAns1 : `Kurtwood Smith (That 70's Show)`,
     incorrectAns2 : `Christopher Lloyd (Back to the Future)`,
-    incorrectAns3 : `Tony Todd (Candyman)`
+    incorrectAns3 : `Tony Todd (Candyman)`,
+    image : `url(https://i.imgur.com/nFaIXtA.jpeg)`
 }
 
 var ques6 = {
@@ -63,7 +68,8 @@ var ques6 = {
     correctAns : `Jonathan Banks (Breaking Bad)`,
     incorrectAns1 : `Scott Thompson (Kids in the Hall)`,
     incorrectAns2 : `Jim O'Heir (Parks and Rec)`,
-    incorrectAns3 : `Wallace Shawn (Princess Bride)`
+    incorrectAns3 : `Wallace Shawn (Princess Bride)`,
+    image : `url(https://i.imgur.com/ZRsi948.jpg)`
 }
 
 var ques7 = {
@@ -71,7 +77,8 @@ var ques7 = {
     correctAns : `Scott Thompson (Kids in the Hall)`,
     incorrectAns1 : `Mick Fleetwood (Fleetwood Mac)`,
     incorrectAns2 : `Christopher Lloyd (Back to the Future)`,
-    incorrectAns3 : `Jason Alexander (Seinfeld)`
+    incorrectAns3 : `Jason Alexander (Seinfeld)`,
+    image : `url(https://i.imgur.com/ioO8MuI.jpg)`
 }
 
 var ques8 = {
@@ -79,7 +86,8 @@ var ques8 = {
     correctAns = `Kurtwood Smith (That 70's Show)`,
     incorrectAns1 = `Wallace Shawn (Princess Bride)`,
     incorrectAns2 = `Iggy Pop (Iggy Pop)`,
-    incorrectAns3 = `Mick Fleetwood (Fleetwood Mac)`
+    incorrectAns3 = `Mick Fleetwood (Fleetwood Mac)`,
+    image : `url(https://i.imgur.com/hKkTAUz.jpg)`
 }
 
 var ques9 = {
@@ -87,7 +95,8 @@ var ques9 = {
     correctAns = `Jim O'Heir (Parks and Rec)`,
     incorrectAns1 = `Jason Alexander (Seinfeld)`,
     incorrectAns2 = `Scott Thompson (Kids in the Hall)`,
-    incorrectAns3 = `Kurtwood Smith (That 70's Show)`
+    incorrectAns3 = `Kurtwood Smith (That 70's Show)`,
+    image : `url(https://i.imgur.com/7uQuyO4.jpg)`
 }
 
 var ques10 = {
@@ -95,7 +104,8 @@ var ques10 = {
     correctAns = `Tony Todd (Candyman)`,
     incorrectAns1 = `Mick Fleetwood (Fleetwood Mac)`,
     incorrectAns2 = `Wallace Shawn (Princess Bride)`,
-    incorrectAns3 = `Jonathan Banks (Breaking Bad)`
+    incorrectAns3 = `Jonathan Banks (Breaking Bad)`,
+    image : `url(https://i.imgur.com/UPKlgox.jpeg)`
 }
 
 
@@ -157,7 +167,16 @@ function startGame() {
 }
 
 
-function checkAnswer(EventTarget) {
+function checkAnswer(evt) {
+    if (answerBtns.evt.target.innerContent == `${ques(round).correctAns}`){
+        counter += 1
+        // celebrate
+        round += 1
+    }else{
+        // shake correct answer
+        round += 1
+    }
+    
     // if answer at event target is the correct answer, add 1 to counter, celebrate, move to next round
     // if answer at event target is the incorrect answer, shake answer button, move to next round
 }
@@ -165,6 +184,10 @@ function checkAnswer(EventTarget) {
 function render() {
     if (round == 11 || time == 0){
         checkRank()
+    }else{
+        answerBtns.innerContent = `${ques(round).correctAns} ${ques(round).incorrectAns1} ${ques(round).incorrectAns2} ${ques(round).incorrectAns3}`
+        question.innerContent = `${ques(round).question}`
+        picture.innerContent = `${ques(round).image}`
     }
 }
 
