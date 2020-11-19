@@ -14,7 +14,7 @@ body {
 
 #game-screen {
     background: lightgrey;
-    visibility: hidde;
+    visibility: "visible";
     width: 400px;
     height: 600px;
     margin: 5px;
@@ -30,6 +30,6 @@ body {
 }
 
 #restart {
-    visibility: hiddn;
+    visibility: "visible";
 }
 
