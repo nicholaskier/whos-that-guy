@@ -7,15 +7,15 @@
  
 
 /*---------------------------- Variables (state) ----------------------------*/
-let timeLeft = 60
+// let timeLeft = 60
 
-let timer = setInterval(function(){
-    document.getElementById('timer').textContent = timeLeft 
-    timeLeft -= 1
-    if (timeLeft < 0){
-        document.getElementById('timer').textConent = ''
-    }
-},1000)
+// let timer = setInterval(function(){
+//     document.getElementById('timer').textContent = timeLeft 
+//     timeLeft -= 1
+//     if (timeLeft < 0){
+//         document.getElementById('timer').textContent = ''
+//     }
+// },1000)
 
 let round, count
 
@@ -163,13 +163,13 @@ function init(){
     round = 0
     time = 60
     count = 0
-    timer()
+    
 
 }
 
 function change(evt){
-    if (evt.type == 'click'){
-    startBtn.style.visibility ='hidden'
+    if (startBtn.style.visibility ='visible'){
+    startBtn.style.visibility = 'hidden'
     getElementById('game-screen').stlye.visibility ='visible'
     startGame()
     }
@@ -208,6 +208,7 @@ function render() {
         answerBtns.innerContent = `${ques(round).correctAns} ${ques(round).incorrectAns1} ${ques(round).incorrectAns2} ${ques(round).incorrectAns3}`
         question.innerContent = `${ques(round).question}`
         picture.innerContent = `${ques(round).image}`
+        
     }
 }
 
@@ -232,9 +233,11 @@ function checkRank() {
 }
 
 
-function switchPallette() {
+// function switchPallette() {
 
-}
+// }
+
+
 
 // function gameWin() {
 //     game.timer.stop()
