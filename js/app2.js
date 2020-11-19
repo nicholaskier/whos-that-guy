@@ -81,27 +81,31 @@ let ques10 = {
 
 
 const startButton = document.getElementById('start')
+const restartButton = document.getElementById('restart')
 const playerScore = document.getElementById('score')
 const currRound   = document.getElementById('round')
-
-
-
-
-
+const gameScreen  = document.getElementById('game-screen')
+const answerButtons = document.getElementById('answer')
+const questionOfRound = document.getElementById('question')
+const rank = document.getElementById('ranking')
 
 
 init()
 
 function init() {
-    round = 0
-    score = 0
-    
+    round = questionOfRound.inner
+    gameScreen.style.visibility= "hidden"
+    rank.style.visibility = "hidden"
+    restartButton.style.visibility = "hidden"
 }
 
 
 startButton.addEventListener('click', startGame)
 
 function startGame() {
+    startButton.style.visibility = "hidden"
+    gameScreen.style.visibility = "visible"
+
     let timeLeft = 60
     let timer = setInterval(function(){
         document.getElementById('timer').textContent = timeLeft
@@ -111,12 +115,20 @@ function startGame() {
         }
     },1000)
     currRound.innerHTML = 1
+    playerScore.innerHTML = 0
+    render()
+}
+
+answerButtons.addEventListener("click", render)
+
+function render(evt) {
+    const button = evt.target
+   
 }
 
 
 
-
-
+restartButton.addEventListener("click", init)
 
 
 
