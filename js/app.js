@@ -125,15 +125,15 @@ let ques10 = {
 /*------------------------ Cached Element References ------------------------*/
 
 
-const startBtn = document.getElementById('start')
-const question = document.getElementById('question')
-const rank = document.getElementById('ranking')
-const answerBtns = document.getElementsByClassName('answer')
-const restartBtn = document.getElementById('restart')
-const picture = document.getElementById('image')
-const count = document.getElementById('counter')
-const darkMode = document.getElementById('dark-mode')
-const gameBox = document.getElementById('game-screen')
+let startBtn = document.getElementById('start')
+let question = document.getElementById('question')
+let rank = document.getElementById('ranking')
+let answerBtns = document.querySelectorAll('answer')
+let restartBtn = document.getElementById('restart')
+let picture = document.getElementById('image')
+let count = document.getElementById('counter')
+let darkMode = document.getElementById('dark-mode')
+let gameBox = document.getElementById('game-screen')
 
 
 
@@ -215,8 +215,8 @@ startBtn.addEventListener('click', function(){})
 //     // first question and set of answers populate
 // }
 
-answerBtns.addEventListener('click', function(){})
-if (answerBtns.evt.target.innerContent == `${ques(round).correctAns}`){
+answerBtns.addEventListener('click', function(evt){})
+if (evt.target.innerContent == `${ques(round).correctAns}`){
     counter += 1
     // celebrate
     round += 1
