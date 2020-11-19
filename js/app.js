@@ -125,23 +125,67 @@ let ques10 = {
 /*------------------------ Cached Element References ------------------------*/
 
 
-let startBtn = document.getElementById('start')
-let question = document.getElementById('question')
-let rank = document.getElementById('ranking')
-let answerBtns = document.querySelectorAll('answer')
-let restartBtn = document.getElementById('restart')
-let picture = document.getElementById('image')
-let count = document.getElementById('counter')
-let darkMode = document.getElementById('dark-mode')
-let gameBox = document.getElementById('game-screen')
+// let startBtn = document.getElementById('start')
+// let question = document.getElementById('question')
+// let rank = document.getElementById('ranking')
+// let answerBtns = document.querySelectorAll('answer')
+// let restartBtn = document.getElementById('restart')
+// let picture = document.getElementById('image')
+// let count = document.getElementById('counter')
+// let darkMode = document.getElementById('dark-mode')
+// let gameBox = document.getElementById('game-screen')
 
 
 
 
-// You might choose to put your game status here
-//cache buttons, image, timer(?), score count  
+// // You might choose to put your game status here
+// //cache buttons, image, timer(?), score count  
 
-/*----------------------------- Event Listeners -----------------------------*/
+// /*----------------------------- Event Listeners -----------------------------*/
+
+
+// // startBtn.addEventListener('click', function(){})
+// //     startBtn.style.visibility = "hidden"
+// //     gameBox.style.visibility = "visible"
+// //     restartBtn.style.visibility = "visible"
+// //     let timeLeft = 60
+
+// //     let timer = setInterval(function(){
+// //     document.getElementById('timer').textContent = timeLeft 
+// //     timeLeft -= 1
+// //     if (timeLeft < 0){
+// //         document.getElementById('timer').textContent = ''
+// //     }
+// //     },1000)
+// //     round = 1
+// //     score = 0
+// //     render()
+// // answerBtns.addEventListener('click', checkAnswer)
+// restartBtn.addEventListener('click', init)
+// darkMode.addEventListener('click', switchPallette)
+
+// // This is where you should put the event listener
+// // for a mouse-click
+// // Clicks for start box, each answer box, submit button, reset button 
+// /*-------------------------------- Functions --------------------------------*/
+
+
+// init()
+
+
+
+
+// function init(){
+//     round = 0    
+// }
+
+// // function change(evt){
+// //     if (startBtn.style.visibility ='visible'){
+// //     startBtn.style.visibility = 'hidden'
+// //     getElementById('game-screen').stlye.visibility ='visible'
+// //     startGame()
+// //     }
+// // }
 
 
 // startBtn.addEventListener('click', function(){})
@@ -160,122 +204,78 @@ let gameBox = document.getElementById('game-screen')
 //     round = 1
 //     score = 0
 //     render()
-// answerBtns.addEventListener('click', checkAnswer)
-restartBtn.addEventListener('click', init)
-darkMode.addEventListener('click', switchPallette)
 
-// This is where you should put the event listener
-// for a mouse-click
-// Clicks for start box, each answer box, submit button, reset button 
-/*-------------------------------- Functions --------------------------------*/
+// // function startGame() {
+// //     // startBtn.style.visibility = 'hidden'
+// //     // getElementById('game-screen').stlye.visibility = 'visible'
+// //     // getElementById('question-box').style.visibility = 'visible'
+// //     round = 1
+// //     // timer begins
+// //     render()
+// //     // first question and set of answers populate
+// // }
 
-
-init()
-
-
-
-
-function init(){
-    round = 0    
-}
-
-// function change(evt){
-//     if (startBtn.style.visibility ='visible'){
-//     startBtn.style.visibility = 'hidden'
-//     getElementById('game-screen').stlye.visibility ='visible'
-//     startGame()
-//     }
+// answerBtns.addEventListener('click', function(evt){})
+// if (evt.target.innerContent == `${ques(round).correctAns}`){
+//     counter += 1
+//     // celebrate
+//     round += 1
+// }else{
+//     // shake correct answer
+//     round += 1
 // }
-
-
-startBtn.addEventListener('click', function(){})
-    startBtn.style.visibility = "hidden"
-    gameBox.style.visibility = "visible"
-    restartBtn.style.visibility = "visible"
-    let timeLeft = 60
-
-    let timer = setInterval(function(){
-    document.getElementById('timer').textContent = timeLeft 
-    timeLeft -= 1
-    if (timeLeft < 0){
-        document.getElementById('timer').textContent = ''
-    }
-    },1000)
-    round = 1
-    score = 0
-    render()
-
-// function startGame() {
-//     // startBtn.style.visibility = 'hidden'
-//     // getElementById('game-screen').stlye.visibility = 'visible'
-//     // getElementById('question-box').style.visibility = 'visible'
-//     round = 1
-//     // timer begins
-//     render()
-//     // first question and set of answers populate
-// }
-
-answerBtns.addEventListener('click', function(evt){})
-if (evt.target.innerContent == `${ques(round).correctAns}`){
-    counter += 1
-    // celebrate
-    round += 1
-}else{
-    // shake correct answer
-    round += 1
-}
     
 
-// function checkAnswer(evt) {
-//     if (answerBtns.evt.target.innerContent == `${ques(round).correctAns}`){
-//         counter += 1
-//         // celebrate
-//         round += 1
+// // function checkAnswer(evt) {
+// //     if (answerBtns.evt.target.innerContent == `${ques(round).correctAns}`){
+// //         counter += 1
+// //         // celebrate
+// //         round += 1
+// //     }else{
+// //         // shake correct answer
+// //         round += 1
+// //     }
+    
+//     // if answer at event target is the correct answer, add 1 to counter, celebrate, move to next round
+//     // if answer at event target is the incorrect answer, shake answer button, move to next round
+// // }
+
+// function render() {
+//     if (round == 11 || time == 0){
+//         gameBox.style.visibility = "hidden"
+//         checkRank()
 //     }else{
-//         // shake correct answer
-//         round += 1
-//     }
-    
-    // if answer at event target is the correct answer, add 1 to counter, celebrate, move to next round
-    // if answer at event target is the incorrect answer, shake answer button, move to next round
-// }
-
-function render() {
-    if (round == 11 || time == 0){
-        gameBox.style.visibility = "hidden"
-        checkRank()
-    }else{
-        answerBtns.innerContent = `${ques(round).correctAns} ${ques(round).incorrectAns1} ${ques(round).incorrectAns2} ${ques(round).incorrectAns3}`
-        question.innerContent = `${ques(round).question}`
-        picture.src.innerContent = `${ques(round).image}`
+//         answerBtns.innerContent = `${ques(round).correctAns} ${ques(round).incorrectAns1} ${ques(round).incorrectAns2} ${ques(round).incorrectAns3}`
+//         question.innerContent = `${ques(round).question}`
+//         picture.src.innerContent = `${ques(round).image}`
         
-    }
-}
-
-
-
-
-function checkRank() {
-    if (score == 0){
-        rank.innerContent = `${ranks.neelix}`
-    }
-    if (score > 0 && counter <= 3){
-        rank.innerContent =  `${ranks.ensign}`
-    }
-    if (score > 3 && counter <= 6){
-        rank.innerContent =  `${ranks.lieutenant}`
-    }
-    if (score > 6 && counter <= 9){
-        rank.innerContent =  `${ranks.commander}`
-    }else{
-        rank.innerContent =  `${ranks.captain}`
-    }
-}
-
-
-// function switchPallette() {
-
+//     }
 // }
+
+
+
+
+// function checkRank() {
+//     if (score == 0){
+//         rank.innerContent = `${ranks.neelix}`
+//     }
+//     if (score > 0 && counter <= 3){
+//         rank.innerContent =  `${ranks.ensign}`
+//     }
+//     if (score > 3 && counter <= 6){
+//         rank.innerContent =  `${ranks.lieutenant}`
+//     }
+//     if (score > 6 && counter <= 9){
+//         rank.innerContent =  `${ranks.commander}`
+//     }else{
+//         rank.innerContent =  `${ranks.captain}`
+//     }
+// }
+
+
+// // function switchPallette() {
+
+// // }
 
 
 
