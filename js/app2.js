@@ -1,5 +1,6 @@
 let timeLeft
 let round
+let score
 
 
 let ranks = {
@@ -112,12 +113,14 @@ init()
 
 function init() {
     round = 0
+    score = 0
     startButton.style.visibility = "visible"
     startScreen.style.visibility = "visible"
     quesBox.style.visibility = "hidden"
     rank.style.visibility = "hidden"
     gameScreen.style.visibility= "hidden"
     restartButton.style.visibility = "hidden"
+    
 }
 
 
@@ -140,7 +143,6 @@ function startGame() {
     },1000)
     currRound.innerHTML = parseInt(round) + 1
     console.log(parseInt(round))
-    let score = 0
     playerScore.innerHTML = parseInt(score)
     render()
 }
@@ -253,7 +255,7 @@ function render() {
 
 function checkAnswer(event) {
     currRound.innerHTML = parseInt(round) + 1
-    if (event.target.innerHTML != `${prompts[round].correctAns}`){
+    if (event.target.textContent != `${prompts[round].correctAns}`){
         
     } else {
         score += 1
@@ -292,7 +294,7 @@ function checkRank() {
 restartButton.addEventListener("click", restart)
 
 function restart() {
-    
+
     init()
 
 }
