@@ -14,70 +14,70 @@ let prompts = [
     question : `Wait, who's he again?`,
     correctAns : `Wallace Shawn (Princess Bride)`,
     answers : [`Tony Todd (Candyman)`, `Jonathan Banks (Breaking Bad)`, `Kurtwood Smith (That 70's Show)`],
-    image : `url(https://i.imgur.com/B26FTeF.jpeg)`
+    image : `https://i.imgur.com/B26FTeF.jpeg`
     },
 
     two = {
     question : `Hold up, you know this one...`,
     correctAns : `Christopher Lloyd (Back to the Future)`,
     answers : [`Scott Thompson (Kids in the Hall)`, `Jim O'Heir (Parks and Rec)`, `Jason Alexander (Seinfeld)`],
-    image : `url(https://i.imgur.com/gSkLXBv.jpg)`
+    image : `https://i.imgur.com/gSkLXBv.jpg`
     },
 
     three =  {
     question : `Oh! Oh, yeah! THAT guy! ...um...`,
     correctAns : `Iggy Pop (Iggy Pop)`,
     answers : [`Mick Fleetwood (Fleetwood Mac)`, `Wallace Shawn (Princess Bride)`, `Tony Todd (Candyman)`],
-    image : `url(https://i.imgur.com/ibdfNnj.jpeg)`
+    image : `https://i.imgur.com/ibdfNnj.jpeg`
     },
 
     four = {
     question : `Well, this is an easy one ...`,
     correctAns : `Jason Alexander (Seinfeld)`,
     answers : [`Jim O'Heir (Parks and Rec)`, `Kurtwood Smith (Kids in the Hall)`, `Iggy Pop (Iggy Pop)`],
-    image : `url(https://i.imgur.com/4yTTeBh.jpeg)`
+    image : `https://i.imgur.com/4yTTeBh.jpeg`
     },
 
     five = {
     question : `How are you supposed to tell under all that loaf?`,
     correctAns : `Mick Fleetwood (Fleetwood Mac)`,
     answers : [`Kurtwood Smith (That 70's Show)`, `Christopher Lloyd (Back to the Future)`, `Tony Todd (Candyman)`],
-    image : `url(https://i.imgur.com/nFaIXtA.jpeg)`
+    image : `https://i.imgur.com/nFaIXtA.jpeg`
     },
 
     six = {
     question : `HOLD UP...holdupholdupholdup..`,
     correctAns : `Jonathan Banks (Breaking Bad)`,
     answers : [`Scott Thompson (Kids in the Hall)`, `Jim O'Heir (Parks and Rec)`, `Wallace Shawn (Princess Bride)`],
-    image : `url(https://i.imgur.com/ZRsi948.jpg)`
+    image : `https://i.imgur.com/ZRsi948.jpg`
     },
 
     seven =  {
     question : `...it's on the tip of your tongue`,
     correctAns : `Scott Thompson (Kids in the Hall)`,
     answers : [`Mick Fleetwood (Fleetwood Mac)`, `Christopher Lloyd (Back to the Future)`, `Jason Alexander (Seinfeld)`],
-    image : `url(https://i.imgur.com/ioO8MuI.jpg)`
+    image : `https://i.imgur.com/ioO8MuI.jpg`
     },
 
     eight = {
     question : `You've definitely seen THAT dude.`,
     correctAns : `Kurtwood Smith (That 70's Show)`,
     answers : [`Wallace Shawn (Princess Bride)`, `Iggy Pop (Iggy Pop)`, `Mick Fleetwood (Fleetwood Mac)`],
-    image : `url(https://i.imgur.com/hKkTAUz.jpg)`
+    image : `https://i.imgur.com/hKkTAUz.jpg`
     },
 
     nine = {
     question : `GUH! Where is he FROM?!`,
     correctAns : `Jim O'Heir (Parks and Rec)`,
     answers : [`Jason Alexander (Seinfeld)`, `Scott Thompson (Kids in the Hall)`, `Kurtwood Smith (That 70's Show)`],
-    image : `url(https://i.imgur.com/7uQuyO4.jpg)`
+    image : `https://i.imgur.com/7uQuyO4.jpg`
     },
 
     ten =  {
     question : `Ok, last one. You've got this!`,
     correctAns : `Tony Todd (Candyman)`,
     answers : [`Mick Fleetwood (Fleetwood Mac)`, `Wallace Shawn (Princess Bride)`, `Jonathan Banks (Breaking Bad)`],
-    image : `url(https://i.imgur.com/UPKlgox.jpeg)`
+    image : `https://i.imgur.com/UPKlgox.jpeg`
     }
 ]
 
@@ -98,7 +98,7 @@ const answerBtn4 = document.getElementById('answer4')
 const questionOfRound = document.getElementById('question')
 const rank = document.getElementById('ranking')
 const image = document.getElementById('image')
-
+const startScreen = document.getElementById('start-screen')
 
 
 init()
@@ -113,7 +113,8 @@ function init() {
 startButton.addEventListener('click', startGame)
 
 function startGame() {
-    startButton.style.visibility = "hidden"
+    startButton.style.visibility= "hidden"
+    startScreen.style.visibility = "hidden"
     gameScreen.style.visibility = "visible"
 
     let timeLeft = 60
@@ -124,12 +125,14 @@ function startGame() {
             document.getElementById('timer').textContent = ''
         }
     },1000)
-    let round = '1'
-    currRound.innerHTML = parseInt(round)
+    let round = '0'
+    currRound.innerHTML = parseInt(round) + 1
+    console.log(parseInt(round))
     let score = '0'
     playerScore.innerHTML = parseInt(score)
     render()
 }
+
 
 
 answerBtn1.addEventListener("click", checkAnswer)
@@ -146,6 +149,7 @@ function render() {
         answerBtn2.textContent = `${prompts[i].answers[0]}`
         answerBtn3.textContent = `${prompts[i].answers[1]}`
         answerBtn4.textContent = `${prompts[i].answers[2]}`
+        console.log(image.src)
         image.src = `${prompts[i].image}`
         questionOfRound.innerHTML = `${prompts[i].question}`
         

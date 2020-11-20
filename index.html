@@ -14,16 +14,19 @@
     <h1>Who's that guy?</h1>
     <h2>Star Trek Edition</h2>
     </div>
-
+    <div id='start-screen'>
     <button id='start'>Start</button>
+    <h2>You will have 60 seconds to answer 10 questions</h2>
+    </div>
     <div id='game-screen'>
-        
+        <div id='top-half'>
         <div id='image-box'>
             <img id='image' src=''>
         </div>
         <div id='score-box'>
-            <div id='round'>Round</div>   
+            <div id='round' value="number">0</div>   
             <div id='score'>Score</div>
+        </div>
         </div>
         <div id='question-box'>
             <div id='question'>Question</div>
@@ -31,8 +34,8 @@
             <button class='answer' id='answer2'>Answer 2</button>
             <button class='answer' id='answer3'>Answer 3</button>
             <button class='answer' id='answer4'>Answer 4</button>
-            <div id='ranking'>Rank</div>
         </div>
+        <div id='ranking'>Rank</div>
     </div>
     
     <p id='timer'>60</p>
