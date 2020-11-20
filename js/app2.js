@@ -1,13 +1,18 @@
 let timeLeft
-let round = 0
+let round
 
 
 let ranks = {
     neelix : `0 CORRECT. Such a Neelix. I mean, we can make you ship's ambassador or something if it would make you feel better`,
+    neeliximg : ``,
     ensign : `1-3 CORRECT. Congrats, Ensign! People might call you 'pretty useless', but hey, at least they call you pretty.`,
+    ensignImg : ``,
     lieutenant : `4-6 CORRECT. Congrats, Lieutenant! You can sit in the big chair when literally everyone else on the ship dissappears if you accidentally kill God or something.`,
+    lieutenantImG : ``,
     commander : `7-9 CORRECT. Congrats, Commander! Try to keep it in your pants!`,
-    captain : `10 CORRECT. Oh Captain, MY Captain! You're never in the wrong, even if everyone under you thinks you're making a terrible mistake.`
+    commanderImg : ``,
+    captain : `10 CORRECT. Oh Captain, MY Captain! You're never in the wrong, even if everyone under you thinks you're making a terrible mistake.`,
+    captainImg : ``
 }
 
 let prompts = [
@@ -106,6 +111,10 @@ const startScreen = document.getElementById('start-screen')
 init()
 
 function init() {
+    round = 0
+    startButton.style.visibility = "visible"
+    startScreen.style.visibility = "visible"
+    quesBox.style.visibility = "hidden"
     rank.style.visibility = "hidden"
     gameScreen.style.visibility= "hidden"
     restartButton.style.visibility = "hidden"
@@ -131,7 +140,7 @@ function startGame() {
     },1000)
     currRound.innerHTML = parseInt(round) + 1
     console.log(parseInt(round))
-    let score = '0'
+    let score = 0
     playerScore.innerHTML = parseInt(score)
     render()
 }
@@ -146,25 +155,23 @@ answerBtn4.addEventListener("click", checkAnswer)
 
 function render() {
     if (round == 0){
-        answerBtn1.textContent = `${prompts[0].correctAns}`
-        answerBtn2.textContent = `${prompts[0].answers[0]}`
+        answerBtn2.textContent = `${prompts[0].correctAns}`
+        answerBtn1.textContent = `${prompts[0].answers[0]}`
         answerBtn3.textContent = `${prompts[0].answers[1]}`
         answerBtn4.textContent = `${prompts[0].answers[2]}`
         console.log(image.src)
         image.src = `${prompts[0].image}`
         questionOfRound.innerHTML = `${prompts[0].question}`
         checkAnswer()
-        round += 1
     }else if (round == 1) {
-        answerBtn1.textContent = `${prompts[1].correctAns}`
+        answerBtn3.textContent = `${prompts[1].correctAns}`
         answerBtn2.textContent = `${prompts[1].answers[0]}`
-        answerBtn3.textContent = `${prompts[1].answers[1]}`
+        answerBtn1.textContent = `${prompts[1].answers[1]}`
         answerBtn4.textContent = `${prompts[1].answers[2]}`
         console.log(image.src)
         image.src = `${prompts[1].image}`
         questionOfRound.innerHTML = `${prompts[1].question}`
         checkAnswer()
-        round += 1
     }else if (round == 2) {
         answerBtn1.textContent = `${prompts[2].correctAns}`
         answerBtn2.textContent = `${prompts[2].answers[0]}`
@@ -175,46 +182,41 @@ function render() {
         questionOfRound.innerHTML = `${prompts[2].question}`
         checkAnswer()
     }else if (round == 3) {
-        round += 1
-        answerBtn1.textContent = `${prompts[3].correctAns}`
+        answerBtn4.textContent = `${prompts[3].correctAns}`
         answerBtn2.textContent = `${prompts[3].answers[0]}`
         answerBtn3.textContent = `${prompts[3].answers[1]}`
-        answerBtn4.textContent = `${prompts[3].answers[2]}`
+        answerBtn1.textContent = `${prompts[3].answers[2]}`
         console.log(image.src)
         image.src = `${prompts[3].image}`
         questionOfRound.innerHTML = `${prompts[3].question}`
         checkAnswer()
-        round += 1
     }else if (round == 4) {
-        answerBtn1.textContent = `${prompts[4].correctAns}`
-        answerBtn2.textContent = `${prompts[4].answers[0]}`
+        answerBtn2.textContent = `${prompts[4].correctAns}`
+        answerBtn1.textContent = `${prompts[4].answers[0]}`
         answerBtn3.textContent = `${prompts[4].answers[1]}`
         answerBtn4.textContent = `${prompts[4].answers[2]}`
         console.log(image.src)
         image.src = `${prompts[4].image}`
         questionOfRound.innerHTML = `${prompts[4].question}`
         checkAnswer()
-        round += 1
     }else if (round == 5) {
-        answerBtn1.textContent = `${prompts[5].correctAns}`
+        answerBtn3.textContent = `${prompts[5].correctAns}`
         answerBtn2.textContent = `${prompts[5].answers[0]}`
-        answerBtn3.textContent = `${prompts[5].answers[1]}`
+        answerBtn1.textContent = `${prompts[5].answers[1]}`
         answerBtn4.textContent = `${prompts[5].answers[2]}`
         console.log(image.src)
         image.src = `${prompts[5].image}`
         questionOfRound.innerHTML = `${prompts[5].question}`
         checkAnswer()
-        round += 1
     }else if (round == 6) {
-        answerBtn1.textContent = `${prompts[6].correctAns}`
-        answerBtn2.textContent = `${prompts[6].answers[0]}`
+        answerBtn2.textContent = `${prompts[6].correctAns}`
+        answerBtn1.textContent = `${prompts[6].answers[0]}`
         answerBtn3.textContent = `${prompts[6].answers[1]}`
         answerBtn4.textContent = `${prompts[6].answers[2]}`
         console.log(image.src)
         image.src = `${prompts[6].image}`
         questionOfRound.innerHTML = `${prompts[6].question}`
         checkAnswer()
-        round += 1
     }else if (round == 7) {
         answerBtn1.textContent = `${prompts[7].correctAns}`
         answerBtn2.textContent = `${prompts[7].answers[0]}`
@@ -224,64 +226,76 @@ function render() {
         image.src = `${prompts[7].image}`
         questionOfRound.innerHTML = `${prompts[7].question}`
         checkAnswer()
-        round += 1
     }else if (round == 8) {
-        answerBtn1.textContent = `${prompts[8].correctAns}`
+        answerBtn3.textContent = `${prompts[8].correctAns}`
         answerBtn2.textContent = `${prompts[8].answers[0]}`
-        answerBtn3.textContent = `${prompts[8].answers[1]}`
+        answerBtn1.textContent = `${prompts[8].answers[1]}`
         answerBtn4.textContent = `${prompts[8].answers[2]}`
         console.log(image.src)
         image.src = `${prompts[8].image}`
         questionOfRound.innerHTML = `${prompts[8].question}`
         checkAnswer()
-        round += 1
     }else if (round == 9) {
-        answerBtn1.textContent = `${prompts[9].correctAns}`
+        answerBtn4.textContent = `${prompts[9].correctAns}`
         answerBtn2.textContent = `${prompts[9].answers[0]}`
         answerBtn3.textContent = `${prompts[9].answers[1]}`
-        answerBtn4.textContent = `${prompts[9].answers[2]}`
+        answerBtn1.textContent = `${prompts[9].answers[2]}`
         console.log(image.src)
         image.src = `${prompts[9].image}`
         questionOfRound.innerHTML = `${prompts[9].question}`
         checkAnswer()
     }
-    if (round > 9 || timeLeft < 0){
+    if (round == 10 || timeLeft < 0){
         checkRank()
     }
 }
 
 
-function checkAnswer(EventTarget) {
-    if (EventTarget.innerHTML == `${prompts[round].correctAns}`){
-        score += 1
+function checkAnswer(event) {
+    currRound.innerHTML = parseInt(round) + 1
+    if (event.target.innerHTML != `${prompts[round].correctAns}`){
+        
     } else {
-        return
+        score += 1
     }
+    round += 1
+    render()
 }
 
 function checkRank() {
-    // quesBox.style.visibility = "hidden"
+    quesBox.style.visibility = "hidden"
     rank.style.visibility = "visible"
     restartButton.style.visibility = "visible"
     if ( score == 0){
-        rank.innerHTML = ranks.neelix
+        rank.innerHTML = `${ranks.neelix}`
+        image.src = `${ranks.neelixImg}`
     }
     if ( score > 0 && score <= 3){
-        rank.innerHTML = ranks.ensign
+        rank.innerHTML = `${ranks.ensign}`
+        image.src = `${ranks.ensignImg}`
     }
     if ( score >= 4 && score <= 6){
-        rank.innerHTML = ranks.lieutenant
+        rank.innerHTML = `${ranks.lieutenant}`
+        image.src = `${ranks.lieutenantImG}`
     }
     if ( score >= 7 && score <= 9){
-        rank.innerHTML = ranks.commander
+        rank.innerHTML = `${ranks.commander}`
+        image.src = `${ranks.commanderImg}`
     }
     if ( score == 10){
-        rank.innerHTML = ranks.captain
+        rank.innerHTML = `${ranks.captain}`
+        image.src = `${ranks.captainImg}`
     }
 
 }
 
-restartButton.addEventListener("click", init)
+restartButton.addEventListener("click", restart)
+
+function restart() {
+    
+    init()
+
+}
 
 
 
