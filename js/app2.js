@@ -9,76 +9,77 @@ let ranks = {
     captain : `10 CORRECT. Oh Captain, MY Captain! You're never in the wrong, even if everyone under you thinks you're making a terrible mistake.`
 }
 
-let ques1 = {
+let prompts = {
+    1 : {
     question : `Wait, who's he again?`,
     correctAns : `Wallace Shawn (Princess Bride)`,
     answers : [`Tony Todd (Candyman)`, `Jonathan Banks (Breaking Bad)`, `Kurtwood Smith (That 70's Show)`],
     image : `url(https://i.imgur.com/B26FTeF.jpeg)`
-}
+    },
 
-let ques2 = {
+    2 : {
     question : `Hold up, you know this one...`,
     correctAns : `Christopher Lloyd (Back to the Future)`,
-    answers : [`Scott Thompson (Kids in the Hall)`, `Jim O'Heir (Parks and Rec)`, `Christopher Lloyd (Back to the Future)`, `Jason Alexander (Seinfeld)`],
+    answers : [`Scott Thompson (Kids in the Hall)`, `Jim O'Heir (Parks and Rec)`, `Jason Alexander (Seinfeld)`],
     image : `url(https://i.imgur.com/gSkLXBv.jpg)`
-}
+    },
 
-let ques3 = {
+    3 :  {
     question : `Oh! Oh, yeah! THAT guy! ...um...`,
     correctAns : `Iggy Pop (Iggy Pop)`,
-    answers : [`Mick Fleetwood (Fleetwood Mac)`, `Iggy Pop (Iggy Pop)`, `Wallace Shawn (Princess Bride)`, `Tony Todd (Candyman)`],
+    answers : [`Mick Fleetwood (Fleetwood Mac)`, `Wallace Shawn (Princess Bride)`, `Tony Todd (Candyman)`],
     image : `url(https://i.imgur.com/ibdfNnj.jpeg)`
-}
+    },
 
-let ques4 = {
+    4 : {
     question : `Well, this is an easy one ...`,
     correctAns : `Jason Alexander (Seinfeld)`,
-    answers : [`Jim O'Heir (Parks and Rec)`, `Kurtwood Smith (Kids in the Hall)`, `Iggy Pop (Iggy Pop)`, `Jason Alexander (Seinfeld)`],
+    answers : [`Jim O'Heir (Parks and Rec)`, `Kurtwood Smith (Kids in the Hall)`, `Iggy Pop (Iggy Pop)`],
     image : `url(https://i.imgur.com/4yTTeBh.jpeg)`
-}
+    },
 
-let ques5 = {
+    5 : {
     question : `How are you supposed to tell under all that loaf?`,
     correctAns : `Mick Fleetwood (Fleetwood Mac)`,
-    answers : [`Kurtwood Smith (That 70's Show)`, `Christopher Lloyd (Back to the Future)`, `Mick Fleetwood (Fleetwood Mac)`, `Tony Todd (Candyman)`],
+    answers : [`Kurtwood Smith (That 70's Show)`, `Christopher Lloyd (Back to the Future)`, `Tony Todd (Candyman)`],
     image : `url(https://i.imgur.com/nFaIXtA.jpeg)`
-}
+    },
 
-let ques6 = {
+    6 : {
     question : `HOLD UP...holdupholdupholdup..`,
     correctAns : `Jonathan Banks (Breaking Bad)`,
-    answers : [`Scott Thompson (Kids in the Hall)`, `Jonathan Banks (Breaking Bad)`, `Jim O'Heir (Parks and Rec)`, `Wallace Shawn (Princess Bride)`],
+    answers : [`Scott Thompson (Kids in the Hall)`, `Jim O'Heir (Parks and Rec)`, `Wallace Shawn (Princess Bride)`],
     image : `url(https://i.imgur.com/ZRsi948.jpg)`
-}
+    },
 
-let ques7 = {
+    7 :  {
     question : `...it's on the tip of your tongue`,
     correctAns : `Scott Thompson (Kids in the Hall)`,
-    answers : [`Mick Fleetwood (Fleetwood Mac)`, `Christopher Lloyd (Back to the Future)`, `Scott Thompson (Kids in the Hall)`, `Jason Alexander (Seinfeld)`],
+    answers : [`Mick Fleetwood (Fleetwood Mac)`, `Christopher Lloyd (Back to the Future)`, `Jason Alexander (Seinfeld)`],
     image : `url(https://i.imgur.com/ioO8MuI.jpg)`
-}
+    },
 
-let ques8 = {
+    8 : {
     question : `You've definitely seen THAT dude.`,
     correctAns : `Kurtwood Smith (That 70's Show)`,
-    answers : [`Kurtwood Smith (That 70's Show)`, `Wallace Shawn (Princess Bride)`, `Iggy Pop (Iggy Pop)`, `Mick Fleetwood (Fleetwood Mac)`],
+    answers : [`Wallace Shawn (Princess Bride)`, `Iggy Pop (Iggy Pop)`, `Mick Fleetwood (Fleetwood Mac)`],
     image : `url(https://i.imgur.com/hKkTAUz.jpg)`
-}
+    },
 
-let ques9 = {
+    9 : {
     question : `GUH! Where is he FROM?!`,
     correctAns : `Jim O'Heir (Parks and Rec)`,
-    answers : [`Jason Alexander (Seinfeld)`, `Scott Thompson (Kids in the Hall)`, `Kurtwood Smith (That 70's Show)`, `Jim O'Heir (Parks and Rec)`],
+    answers : [`Jason Alexander (Seinfeld)`, `Scott Thompson (Kids in the Hall)`, `Kurtwood Smith (That 70's Show)`],
     image : `url(https://i.imgur.com/7uQuyO4.jpg)`
-}
+    },
 
-let ques10 = {
+    10 :  {
     question : `Ok, last one. You've got this!`,
     correctAns : `Tony Todd (Candyman)`,
-    answers : [`Mick Fleetwood (Fleetwood Mac)`, `Tony Todd (Candyman)`, `Wallace Shawn (Princess Bride)`, `Jonathan Banks (Breaking Bad)`],
+    answers : [`Mick Fleetwood (Fleetwood Mac)`, `Wallace Shawn (Princess Bride)`, `Jonathan Banks (Breaking Bad)`],
     image : `url(https://i.imgur.com/UPKlgox.jpeg)`
+    }
 }
-
 
 const startButton = document.getElementById('start')
 const restartButton = document.getElementById('restart')
@@ -134,27 +135,54 @@ function startGame() {
 
 
 function render() {
-    
-    questionOfRound.innerHTML = `${ques1.question}`
-    answerBtn1.innerHTML = `${ques1.correctAns}`
-    answerBtn2.innerHTML = `${ques1.answers[0]}`
-    answerBtn3.innerHTML = `${ques1.answers[1]}`
-    answerBtn4.innerHTML = `${ques1.answers[2]}`
-    image.src = `${ques1.image}`
-    checkAnswer()
-
+    if (timeLeft == 0){
+        checkRank()
+    }else for (let i = 1; i < 11; i++) {
+        answerBtn1.innerHTML = `${prompts[i].correctAns}`
+        answerBtn2.innerHTML = `${prompts[i].answers[0]}`
+        answerBtn3.innerHTML = `${prompts[i].answers[1]}`
+        answerBtn4.innerHTML = `${prompts[i].answers[2]}`
+        image.src = `${prompts[i].image}`
+        questionOfRound.innerHTML = `${prompts[i].question}`
+        checkAnswer()
+        round += 1
+        }
+    checkRank()
 }
 
 
-
-
 function checkAnswer() {
-    if(event.target.innerHTML != `${ques1.correctAns}`){
-        round += 1
-    }
+    let i = 1
+    if (event.target.innerHTML == `${prompts[i].correctAns}`){
         score += 1
-        round += 1
-    
+        i += 1
+    } else {
+        i += 1
+    }
+    // let i = parseInt(round)
+    // if(event.target.innerHTML == `${prompts[i].correctAns}`){
+    //     score += 1
+    // }
+}
+
+function checkRank() {
+    restartButton.style.visibility = "visible"
+    if ( score == 0){
+        rank.innerHTML = ranks.neelix
+    }
+    if ( score > 0 && score <= 3){
+        rank.innerHTML = ranks.ensign
+    }
+    if ( score >= 4 && score <= 6){
+        rank.innerHTML = ranks.lieutenant
+    }
+    if ( score >= 7 && score <= 9){
+        rank.innerHTML = ranks.commander
+    }
+    if ( score == 10){
+        rank.innerHTML = ranks.captain
+    }
+
 }
 
 restartButton.addEventListener("click", init)
