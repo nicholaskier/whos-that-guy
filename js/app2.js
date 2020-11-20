@@ -1,4 +1,4 @@
-let round, score, timeLeft
+let score, timeLeft
 
 
 let ranks = {
@@ -12,7 +12,7 @@ let ranks = {
 let ques1 = {
     question : `Wait, who's he again?`,
     correctAns : `Wallace Shawn (Princess Bride)`,
-    answers : [`Tony Todd (Candyman)`, `Jonathan Banks (Breaking Bad)`, `Kurtwood Smith (That 70's Show)`, `Wallace Shawn (Princess Bride)`],
+    answers : [`Tony Todd (Candyman)`, `Jonathan Banks (Breaking Bad)`, `Kurtwood Smith (That 70's Show)`],
     image : `url(https://i.imgur.com/B26FTeF.jpeg)`
 }
 
@@ -85,15 +85,26 @@ const restartButton = document.getElementById('restart')
 const playerScore = document.getElementById('score')
 const currRound   = document.getElementById('round')
 const gameScreen  = document.getElementById('game-screen')
-const answerButtons = document.getElementById('answer')
+// const answerButtons = document.getElementById('answer')
+const answerBtn1 = document.getElementById('answer1')
+const answerBtn2 = document.getElementById('answer2')
+const answerBtn3 = document.getElementById('answer3')
+const answerBtn4 = document.getElementById('answer4')
 const questionOfRound = document.getElementById('question')
 const rank = document.getElementById('ranking')
+const image = document.getElementById('image')
 
+
+
+
+answerBtn1.addEventListener("click", checkAnswer)
+answerBtn2.addEventListener("click", checkAnswer)
+answerBtn3.addEventListener("click", checkAnswer)
+answerBtn4.addEventListener("click", checkAnswer)
 
 init()
 
 function init() {
-    round = questionOfRound.inner
     gameScreen.style.visibility= "hidden"
     rank.style.visibility = "hidden"
     restartButton.style.visibility = "hidden"
@@ -114,19 +125,37 @@ function startGame() {
             document.getElementById('timer').textContent = ''
         }
     },1000)
-    currRound.innerHTML = 1
-    playerScore.innerHTML = 0
+    let round = '1'
+    currRound.innerHTML = parseInt(round)
+    let score = '0'
+    playerScore.innerHTML = parseInt(score)
     render()
 }
 
-answerButtons.addEventListener("click", render)
 
-function render(evt) {
-    const button = evt.target
-   
+function render() {
+    
+    questionOfRound.innerHTML = `${ques1.question}`
+    answerBtn1.innerHTML = `${ques1.correctAns}`
+    answerBtn2.innerHTML = `${ques1.answers[0]}`
+    answerBtn3.innerHTML = `${ques1.answers[1]}`
+    answerBtn4.innerHTML = `${ques1.answers[2]}`
+    image.src = `${ques1.image}`
+    checkAnswer()
+
 }
 
 
+
+
+function checkAnswer() {
+    if(event.target.innerHTML != `${ques1.correctAns}`){
+        round += 1
+    }
+        score += 1
+        round += 1
+    
+}
 
 restartButton.addEventListener("click", init)
 
