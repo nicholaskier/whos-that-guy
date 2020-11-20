@@ -1,4 +1,5 @@
 let timeLeft
+let round = 0
 
 
 let ranks = {
@@ -87,6 +88,7 @@ console.log(prompts[0].correctAns)
 
 const startButton = document.getElementById('start')
 const restartButton = document.getElementById('restart')
+const quesBox = document.getElementById('question-box')
 const playerScore = document.getElementById('score')
 const currRound   = document.getElementById('round')
 const gameScreen  = document.getElementById('game-screen')
@@ -104,8 +106,8 @@ const startScreen = document.getElementById('start-screen')
 init()
 
 function init() {
-    gameScreen.style.visibility= "hidden"
     rank.style.visibility = "hidden"
+    gameScreen.style.visibility= "hidden"
     restartButton.style.visibility = "hidden"
 }
 
@@ -113,6 +115,8 @@ function init() {
 startButton.addEventListener('click', startGame)
 
 function startGame() {
+    rank.style.visibility = "hidden"
+    quesBox.style.visibility = "visible"
     startButton.style.visibility= "hidden"
     startScreen.style.visibility = "hidden"
     gameScreen.style.visibility = "visible"
@@ -125,7 +129,6 @@ function startGame() {
             document.getElementById('timer').textContent = ''
         }
     },1000)
-    let round = '0'
     currRound.innerHTML = parseInt(round) + 1
     console.log(parseInt(round))
     let score = '0'
@@ -142,36 +145,122 @@ answerBtn4.addEventListener("click", checkAnswer)
 
 
 function render() {
-    if (timeLeft == 0){
-        checkRank()
-    }else for (let i = 0; i < 10; i++) {
-        answerBtn1.textContent = `${prompts[i].correctAns}`
-        answerBtn2.textContent = `${prompts[i].answers[0]}`
-        answerBtn3.textContent = `${prompts[i].answers[1]}`
-        answerBtn4.textContent = `${prompts[i].answers[2]}`
+    if (round == 0){
+        answerBtn1.textContent = `${prompts[0].correctAns}`
+        answerBtn2.textContent = `${prompts[0].answers[0]}`
+        answerBtn3.textContent = `${prompts[0].answers[1]}`
+        answerBtn4.textContent = `${prompts[0].answers[2]}`
         console.log(image.src)
-        image.src = `${prompts[i].image}`
-        questionOfRound.innerHTML = `${prompts[i].question}`
-        
+        image.src = `${prompts[0].image}`
+        questionOfRound.innerHTML = `${prompts[0].question}`
         checkAnswer()
-       
         round += 1
-        }
-    checkRank()
+    }else if (round == 1) {
+        answerBtn1.textContent = `${prompts[1].correctAns}`
+        answerBtn2.textContent = `${prompts[1].answers[0]}`
+        answerBtn3.textContent = `${prompts[1].answers[1]}`
+        answerBtn4.textContent = `${prompts[1].answers[2]}`
+        console.log(image.src)
+        image.src = `${prompts[1].image}`
+        questionOfRound.innerHTML = `${prompts[1].question}`
+        checkAnswer()
+        round += 1
+    }else if (round == 2) {
+        answerBtn1.textContent = `${prompts[2].correctAns}`
+        answerBtn2.textContent = `${prompts[2].answers[0]}`
+        answerBtn3.textContent = `${prompts[2].answers[1]}`
+        answerBtn4.textContent = `${prompts[2].answers[2]}`
+        console.log(image.src)
+        image.src = `${prompts[2].image}`
+        questionOfRound.innerHTML = `${prompts[2].question}`
+        checkAnswer()
+    }else if (round == 3) {
+        round += 1
+        answerBtn1.textContent = `${prompts[3].correctAns}`
+        answerBtn2.textContent = `${prompts[3].answers[0]}`
+        answerBtn3.textContent = `${prompts[3].answers[1]}`
+        answerBtn4.textContent = `${prompts[3].answers[2]}`
+        console.log(image.src)
+        image.src = `${prompts[3].image}`
+        questionOfRound.innerHTML = `${prompts[3].question}`
+        checkAnswer()
+        round += 1
+    }else if (round == 4) {
+        answerBtn1.textContent = `${prompts[4].correctAns}`
+        answerBtn2.textContent = `${prompts[4].answers[0]}`
+        answerBtn3.textContent = `${prompts[4].answers[1]}`
+        answerBtn4.textContent = `${prompts[4].answers[2]}`
+        console.log(image.src)
+        image.src = `${prompts[4].image}`
+        questionOfRound.innerHTML = `${prompts[4].question}`
+        checkAnswer()
+        round += 1
+    }else if (round == 5) {
+        answerBtn1.textContent = `${prompts[5].correctAns}`
+        answerBtn2.textContent = `${prompts[5].answers[0]}`
+        answerBtn3.textContent = `${prompts[5].answers[1]}`
+        answerBtn4.textContent = `${prompts[5].answers[2]}`
+        console.log(image.src)
+        image.src = `${prompts[5].image}`
+        questionOfRound.innerHTML = `${prompts[5].question}`
+        checkAnswer()
+        round += 1
+    }else if (round == 6) {
+        answerBtn1.textContent = `${prompts[6].correctAns}`
+        answerBtn2.textContent = `${prompts[6].answers[0]}`
+        answerBtn3.textContent = `${prompts[6].answers[1]}`
+        answerBtn4.textContent = `${prompts[6].answers[2]}`
+        console.log(image.src)
+        image.src = `${prompts[6].image}`
+        questionOfRound.innerHTML = `${prompts[6].question}`
+        checkAnswer()
+        round += 1
+    }else if (round == 7) {
+        answerBtn1.textContent = `${prompts[7].correctAns}`
+        answerBtn2.textContent = `${prompts[7].answers[0]}`
+        answerBtn3.textContent = `${prompts[7].answers[1]}`
+        answerBtn4.textContent = `${prompts[7].answers[2]}`
+        console.log(image.src)
+        image.src = `${prompts[7].image}`
+        questionOfRound.innerHTML = `${prompts[7].question}`
+        checkAnswer()
+        round += 1
+    }else if (round == 8) {
+        answerBtn1.textContent = `${prompts[8].correctAns}`
+        answerBtn2.textContent = `${prompts[8].answers[0]}`
+        answerBtn3.textContent = `${prompts[8].answers[1]}`
+        answerBtn4.textContent = `${prompts[8].answers[2]}`
+        console.log(image.src)
+        image.src = `${prompts[8].image}`
+        questionOfRound.innerHTML = `${prompts[8].question}`
+        checkAnswer()
+        round += 1
+    }else if (round == 9) {
+        answerBtn1.textContent = `${prompts[9].correctAns}`
+        answerBtn2.textContent = `${prompts[9].answers[0]}`
+        answerBtn3.textContent = `${prompts[9].answers[1]}`
+        answerBtn4.textContent = `${prompts[9].answers[2]}`
+        console.log(image.src)
+        image.src = `${prompts[9].image}`
+        questionOfRound.innerHTML = `${prompts[9].question}`
+        checkAnswer()
+    }
+    if (round > 9 || timeLeft < 0){
+        checkRank()
+    }
 }
 
 
-function checkAnswer() {
-    let i = 0
-    if (this.innerHTML == `${prompts[i].correctAns}`){
+function checkAnswer(EventTarget) {
+    if (EventTarget.innerHTML == `${prompts[round].correctAns}`){
         score += 1
-        i += 1
     } else {
-        i += 1
+        return
     }
 }
 
 function checkRank() {
+    // quesBox.style.visibility = "hidden"
     rank.style.visibility = "visible"
     restartButton.style.visibility = "visible"
     if ( score == 0){

@@ -25,6 +25,32 @@
     text-align: center;
 }
 
+#game-screen {
+    background: lightgrey;
+    visibility: "visible";
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 700px;
+    /* margin: 5px; */
+}
+
+#image-box {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin: 0 auto;
+}
+
+#round {
+    margin: 20px;
+}
+
+#score {
+    margin: 20px;
+}
+
 #start {
     font-size: 60px;
     background-color: steelblue;
@@ -36,22 +62,12 @@
 }
 
 
-#game-screen {
-    background: lightgrey;
-    visibility: "visible";
-    width: 400px;
-    height: 600px;
-    margin: 5px;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto;
-    place-items: center;
-}
+
 
 
 
 #question-box {
-    margin: 40px;
+    margin: 60px;
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto auto auto;
@@ -64,8 +80,29 @@
 
 .answer {
     background-color: lightpink;
+    font-size: 20px;
+    display: flex;
 }
 
+#question {
+    grid-area: 'question';
+}
+
+#answer1 {
+    grid-area: 'answer1';
+}
+
+#answer2 {
+    grid-area: 'answer2';
+}
+
+#answer3 {
+    grid-area: 'answer3';
+}
+
+#answer4 {
+    grid-area: 'answer4';
+}
 #restart {
     visibility: "visible";
 }
