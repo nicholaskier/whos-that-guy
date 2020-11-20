@@ -1,4 +1,4 @@
-let score, timeLeft
+let timeLeft
 
 
 let ranks = {
@@ -9,77 +9,81 @@ let ranks = {
     captain : `10 CORRECT. Oh Captain, MY Captain! You're never in the wrong, even if everyone under you thinks you're making a terrible mistake.`
 }
 
-let prompts = {
-    1 : {
+let prompts = [
+    one = {
     question : `Wait, who's he again?`,
     correctAns : `Wallace Shawn (Princess Bride)`,
     answers : [`Tony Todd (Candyman)`, `Jonathan Banks (Breaking Bad)`, `Kurtwood Smith (That 70's Show)`],
     image : `url(https://i.imgur.com/B26FTeF.jpeg)`
     },
 
-    2 : {
+    two = {
     question : `Hold up, you know this one...`,
     correctAns : `Christopher Lloyd (Back to the Future)`,
     answers : [`Scott Thompson (Kids in the Hall)`, `Jim O'Heir (Parks and Rec)`, `Jason Alexander (Seinfeld)`],
     image : `url(https://i.imgur.com/gSkLXBv.jpg)`
     },
 
-    3 :  {
+    three =  {
     question : `Oh! Oh, yeah! THAT guy! ...um...`,
     correctAns : `Iggy Pop (Iggy Pop)`,
     answers : [`Mick Fleetwood (Fleetwood Mac)`, `Wallace Shawn (Princess Bride)`, `Tony Todd (Candyman)`],
     image : `url(https://i.imgur.com/ibdfNnj.jpeg)`
     },
 
-    4 : {
+    four = {
     question : `Well, this is an easy one ...`,
     correctAns : `Jason Alexander (Seinfeld)`,
     answers : [`Jim O'Heir (Parks and Rec)`, `Kurtwood Smith (Kids in the Hall)`, `Iggy Pop (Iggy Pop)`],
     image : `url(https://i.imgur.com/4yTTeBh.jpeg)`
     },
 
-    5 : {
+    five = {
     question : `How are you supposed to tell under all that loaf?`,
     correctAns : `Mick Fleetwood (Fleetwood Mac)`,
     answers : [`Kurtwood Smith (That 70's Show)`, `Christopher Lloyd (Back to the Future)`, `Tony Todd (Candyman)`],
     image : `url(https://i.imgur.com/nFaIXtA.jpeg)`
     },
 
-    6 : {
+    six = {
     question : `HOLD UP...holdupholdupholdup..`,
     correctAns : `Jonathan Banks (Breaking Bad)`,
     answers : [`Scott Thompson (Kids in the Hall)`, `Jim O'Heir (Parks and Rec)`, `Wallace Shawn (Princess Bride)`],
     image : `url(https://i.imgur.com/ZRsi948.jpg)`
     },
 
-    7 :  {
+    seven =  {
     question : `...it's on the tip of your tongue`,
     correctAns : `Scott Thompson (Kids in the Hall)`,
     answers : [`Mick Fleetwood (Fleetwood Mac)`, `Christopher Lloyd (Back to the Future)`, `Jason Alexander (Seinfeld)`],
     image : `url(https://i.imgur.com/ioO8MuI.jpg)`
     },
 
-    8 : {
+    eight = {
     question : `You've definitely seen THAT dude.`,
     correctAns : `Kurtwood Smith (That 70's Show)`,
     answers : [`Wallace Shawn (Princess Bride)`, `Iggy Pop (Iggy Pop)`, `Mick Fleetwood (Fleetwood Mac)`],
     image : `url(https://i.imgur.com/hKkTAUz.jpg)`
     },
 
-    9 : {
+    nine = {
     question : `GUH! Where is he FROM?!`,
     correctAns : `Jim O'Heir (Parks and Rec)`,
     answers : [`Jason Alexander (Seinfeld)`, `Scott Thompson (Kids in the Hall)`, `Kurtwood Smith (That 70's Show)`],
     image : `url(https://i.imgur.com/7uQuyO4.jpg)`
     },
 
-    10 :  {
+    ten =  {
     question : `Ok, last one. You've got this!`,
     correctAns : `Tony Todd (Candyman)`,
     answers : [`Mick Fleetwood (Fleetwood Mac)`, `Wallace Shawn (Princess Bride)`, `Jonathan Banks (Breaking Bad)`],
     image : `url(https://i.imgur.com/UPKlgox.jpeg)`
     }
-}
+]
+
+
+console.log(prompts[0].correctAns)
+
 
 const startButton = document.getElementById('start')
 const restartButton = document.getElementById('restart')
@@ -96,12 +100,6 @@ const rank = document.getElementById('ranking')
 const image = document.getElementById('image')
 
 
-
-
-answerBtn1.addEventListener("click", checkAnswer)
-answerBtn2.addEventListener("click", checkAnswer)
-answerBtn3.addEventListener("click", checkAnswer)
-answerBtn4.addEventListener("click", checkAnswer)
 
 init()
 
@@ -134,17 +132,25 @@ function startGame() {
 }
 
 
+answerBtn1.addEventListener("click", checkAnswer)
+answerBtn2.addEventListener("click", checkAnswer)
+answerBtn3.addEventListener("click", checkAnswer)
+answerBtn4.addEventListener("click", checkAnswer)
+
+
 function render() {
     if (timeLeft == 0){
         checkRank()
-    }else for (let i = 1; i < 11; i++) {
-        answerBtn1.innerHTML = `${prompts[i].correctAns}`
-        answerBtn2.innerHTML = `${prompts[i].answers[0]}`
-        answerBtn3.innerHTML = `${prompts[i].answers[1]}`
-        answerBtn4.innerHTML = `${prompts[i].answers[2]}`
+    }else for (let i = 0; i < 10; i++) {
+        answerBtn1.textContent = `${prompts[i].correctAns}`
+        answerBtn2.textContent = `${prompts[i].answers[0]}`
+        answerBtn3.textContent = `${prompts[i].answers[1]}`
+        answerBtn4.textContent = `${prompts[i].answers[2]}`
         image.src = `${prompts[i].image}`
         questionOfRound.innerHTML = `${prompts[i].question}`
+        
         checkAnswer()
+       
         round += 1
         }
     checkRank()
@@ -152,20 +158,17 @@ function render() {
 
 
 function checkAnswer() {
-    let i = 1
-    if (event.target.innerHTML == `${prompts[i].correctAns}`){
+    let i = 0
+    if (this.innerHTML == `${prompts[i].correctAns}`){
         score += 1
         i += 1
     } else {
         i += 1
     }
-    // let i = parseInt(round)
-    // if(event.target.innerHTML == `${prompts[i].correctAns}`){
-    //     score += 1
-    // }
 }
 
 function checkRank() {
+    rank.style.visibility = "visible"
     restartButton.style.visibility = "visible"
     if ( score == 0){
         rank.innerHTML = ranks.neelix
