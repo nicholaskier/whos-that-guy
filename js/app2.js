@@ -157,6 +157,7 @@ answerBtn4.addEventListener("click", checkAnswer)
 
 function render() {
     if (round == 0){
+        console.log(score)
         answerBtn2.textContent = `${prompts[0].correctAns}`
         answerBtn1.textContent = `${prompts[0].answers[0]}`
         answerBtn3.textContent = `${prompts[0].answers[1]}`
@@ -166,6 +167,8 @@ function render() {
         questionOfRound.innerHTML = `${prompts[0].question}`
         checkAnswer()
     }else if (round == 1) {
+        playerScore.innerHTML = parseInt(score)
+        console.log(score)
         answerBtn3.textContent = `${prompts[1].correctAns}`
         answerBtn2.textContent = `${prompts[1].answers[0]}`
         answerBtn1.textContent = `${prompts[1].answers[1]}`
@@ -175,6 +178,8 @@ function render() {
         questionOfRound.innerHTML = `${prompts[1].question}`
         checkAnswer()
     }else if (round == 2) {
+        playerScore.innerHTML = parseInt(score)
+        console.log(score)
         answerBtn1.textContent = `${prompts[2].correctAns}`
         answerBtn2.textContent = `${prompts[2].answers[0]}`
         answerBtn3.textContent = `${prompts[2].answers[1]}`
@@ -184,6 +189,8 @@ function render() {
         questionOfRound.innerHTML = `${prompts[2].question}`
         checkAnswer()
     }else if (round == 3) {
+        playerScore.innerHTML = parseInt(score)
+        console.log(score)
         answerBtn4.textContent = `${prompts[3].correctAns}`
         answerBtn2.textContent = `${prompts[3].answers[0]}`
         answerBtn3.textContent = `${prompts[3].answers[1]}`
@@ -193,6 +200,8 @@ function render() {
         questionOfRound.innerHTML = `${prompts[3].question}`
         checkAnswer()
     }else if (round == 4) {
+        playerScore.innerHTML = parseInt(score)
+        console.log(score)
         answerBtn2.textContent = `${prompts[4].correctAns}`
         answerBtn1.textContent = `${prompts[4].answers[0]}`
         answerBtn3.textContent = `${prompts[4].answers[1]}`
@@ -202,6 +211,8 @@ function render() {
         questionOfRound.innerHTML = `${prompts[4].question}`
         checkAnswer()
     }else if (round == 5) {
+        playerScore.innerHTML = parseInt(score)
+        console.log(score)
         answerBtn3.textContent = `${prompts[5].correctAns}`
         answerBtn2.textContent = `${prompts[5].answers[0]}`
         answerBtn1.textContent = `${prompts[5].answers[1]}`
@@ -211,6 +222,8 @@ function render() {
         questionOfRound.innerHTML = `${prompts[5].question}`
         checkAnswer()
     }else if (round == 6) {
+        playerScore.innerHTML = parseInt(score)
+        console.log(score)
         answerBtn2.textContent = `${prompts[6].correctAns}`
         answerBtn1.textContent = `${prompts[6].answers[0]}`
         answerBtn3.textContent = `${prompts[6].answers[1]}`
@@ -220,6 +233,8 @@ function render() {
         questionOfRound.innerHTML = `${prompts[6].question}`
         checkAnswer()
     }else if (round == 7) {
+        playerScore.innerHTML = parseInt(score)
+        console.log(score)
         answerBtn1.textContent = `${prompts[7].correctAns}`
         answerBtn2.textContent = `${prompts[7].answers[0]}`
         answerBtn3.textContent = `${prompts[7].answers[1]}`
@@ -229,6 +244,8 @@ function render() {
         questionOfRound.innerHTML = `${prompts[7].question}`
         checkAnswer()
     }else if (round == 8) {
+        playerScore.innerHTML = parseInt(score)
+        console.log(score)
         answerBtn3.textContent = `${prompts[8].correctAns}`
         answerBtn2.textContent = `${prompts[8].answers[0]}`
         answerBtn1.textContent = `${prompts[8].answers[1]}`
@@ -238,6 +255,8 @@ function render() {
         questionOfRound.innerHTML = `${prompts[8].question}`
         checkAnswer()
     }else if (round == 9) {
+        playerScore.innerHTML = parseInt(score)
+        console.log(score)
         answerBtn4.textContent = `${prompts[9].correctAns}`
         answerBtn2.textContent = `${prompts[9].answers[0]}`
         answerBtn3.textContent = `${prompts[9].answers[1]}`
@@ -254,17 +273,22 @@ function render() {
 
 
 function checkAnswer(event) {
+    console.log(score)
     currRound.innerHTML = parseInt(round) + 1
     if (event.target.textContent != `${prompts[round].correctAns}`){
         
     } else {
         score += 1
+        
     }
+    
     round += 1
     render()
 }
 
 function checkRank() {
+    console.log(score)
+    playerScore.innerHTML = parseInt(score)
     quesBox.style.visibility = "hidden"
     rank.style.visibility = "visible"
     restartButton.style.visibility = "visible"
