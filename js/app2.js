@@ -106,7 +106,6 @@ const answerBtn4 = document.getElementById('answer4')
 const questionOfRound = document.getElementById('question')
 const rank = document.getElementById('ranking')
 const image = document.getElementById('image')
-const startScreen = document.getElementById('start-screen')
 
 
 init()
@@ -115,9 +114,7 @@ function init() {
     round = 0
     score = 0
     startButton.style.visibility = "visible"
-    startScreen.style.visibility = "visible"
     quesBox.style.visibility = "hidden"
-    rank.style.visibility = "hidden"
     gameScreen.style.visibility= "hidden"
     restartButton.style.visibility = "hidden"
     
@@ -127,10 +124,8 @@ function init() {
 startButton.addEventListener('click', startGame)
 
 function startGame() {
-    rank.style.visibility = "hidden"
     quesBox.style.visibility = "visible"
     startButton.style.visibility= "hidden"
-    startScreen.style.visibility = "hidden"
     gameScreen.style.visibility = "visible"
 
     let timeLeft = 60
@@ -293,23 +288,23 @@ function checkRank() {
     rank.style.visibility = "visible"
     restartButton.style.visibility = "visible"
     if ( score == 0){
-        rank.innerHTML = `${ranks.neelix}`
+        quesBox.innerHTML = `${ranks.neelix}`
         image.src = `${ranks.neelixImg}`
     }
     if ( score > 0 && score <= 3){
-        rank.innerHTML = `${ranks.ensign}`
+        quesBox.innerHTML = `${ranks.ensign}`
         image.src = `${ranks.ensignImg}`
     }
     if ( score >= 4 && score <= 6){
-        rank.innerHTML = `${ranks.lieutenant}`
+        quesBox.innerHTML = `${ranks.lieutenant}`
         image.src = `${ranks.lieutenantImG}`
     }
     if ( score >= 7 && score <= 9){
-        rank.innerHTML = `${ranks.commander}`
+        quesBox.innerHTML = `${ranks.commander}`
         image.src = `${ranks.commanderImg}`
     }
     if ( score == 10){
-        rank.innerHTML = `${ranks.captain}`
+        quesBox.innerHTML = `${ranks.captain}`
         image.src = `${ranks.captainImg}`
     }
 
