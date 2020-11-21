@@ -117,6 +117,8 @@ function init() {
     restartButton.style.visibility = "hidden"
     questionOfRound.innerText = `10 Rounds, 10 Guys! 
     You've seen them before, but where?!`
+    currRound.style.visibility = "hidden"
+    playerScore.style.visibility= "hidden"
     answerBtn1.style.visibility = "hidden"
     answerBtn2.style.visibility = "hidden"
     answerBtn3.style.visibility = "hidden"
@@ -127,6 +129,8 @@ function init() {
 startButton.addEventListener('click', startGame)
 
 function startGame() {
+    currRound.style.visibility = "visible"
+    playerScore.style.visibility= "visible"
     quesBox.style.visibility = "visible"
     startButton.style.visibility= "hidden"
     gameScreen.style.visibility = "visible"
@@ -290,6 +294,7 @@ function checkAnswer(event) {
 
 function checkRank() {
     console.log(score)
+    currRound.style.visibility = "hidden"
     answerBtn1.style.visibility = "hidden"
     answerBtn2.style.visibility = "hidden"
     answerBtn3.style.visibility = "hidden"
