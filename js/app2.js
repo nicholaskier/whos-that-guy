@@ -114,10 +114,11 @@ function init() {
     round = 0
     score = 0
     startButton.style.visibility = "visible"
-    quesBox.style.visibility = "hidden"
-    gameScreen.style.visibility= "hidden"
     restartButton.style.visibility = "hidden"
-    
+    answerBtn1.style.visibility = "hidden"
+    answerBtn2.style.visibility = "hidden"
+    answerBtn3.style.visibility = "hidden"
+    answerBtn4.style.visibility = "hidden"
 }
 
 
@@ -127,6 +128,10 @@ function startGame() {
     quesBox.style.visibility = "visible"
     startButton.style.visibility= "hidden"
     gameScreen.style.visibility = "visible"
+    answerBtn1.style.visibility = "visible"
+    answerBtn2.style.visibility = "visible"
+    answerBtn3.style.visibility = "visible"
+    answerBtn4.style.visibility = "visible"
 
     let timeLeft = 60
     let timer = setInterval(function(){
