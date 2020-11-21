@@ -87,8 +87,12 @@ body {
     border-radius: 5px;
 }
 
+#quesroundscore {
+    display: flex;
+}
+
 #answer-box {
-    margin: 40px;
+    margin: 10px;
     display: grid;
 }
 
