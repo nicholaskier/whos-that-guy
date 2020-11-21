@@ -4,6 +4,7 @@
     margin: auto;
     display: grid;
     place-items: center;
+    align-items: center;
 }
 
 #title {
@@ -21,29 +22,31 @@
     color: white;
     border-color: white;
     place-items: center;
-    visibility: visible;
-    transform: translate(0%, 250%) ;
+    transform: translate(0%, 300%) ;
 }
 
 #game-screen {
-    background: lightgrey;
-    visibility: "visible";
+    background: grey;
     align-content: center;
     align-items: center;
     justify-content: center;
     width: 500px;
-    height: 700px;
+    height: 800px;
+    border: 10px darkgray solid;
+    border-radius: 10px;
     /* margin: 5px; */
 }
 
 #image-box {
     display: flex;
     align-items: center;
-    align-content: center;
+    justify-content: center;
     margin: 40px auto;
 }
 
 #image {
+    border: 5px black solid;
+    border-radius: 5px;
     width: 400px;
     height: 300px;
 }
@@ -64,40 +67,51 @@
 
 
 #question-box {
-    margin: 60px;
+    margin: 40px;
+    background-color: black;
+    height: 350px;
+    width: 400px;
+    border: 10px black solid;
+    border-radius: 5px;
+}
+
+#answer-box {
+    margin: 40px;
     display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto auto;
-    grid-template-areas: 
-    'question question',
-    'answer1 answer2',
-    'answer3 answer4'
-    ;
 }
 
 .answer {
     background-color: lightpink;
     font-size: 20px;
-    display: flex;
+    border-radius: 16px;
+    height: 60px;
+    border: none;
+    margin: 5px;
+    color: white;
 }
 
 #question {
+    color: white;
     grid-area: 'question';
 }
 
 #answer1 {
+    background-color: goldenrod;
     grid-area: 'answer1';
 }
 
 #answer2 {
+    background-color: darkblue;
     grid-area: 'answer2';
 }
 
 #answer3 {
+    background-color: goldenrod;
     grid-area: 'answer3';
 }
 
 #answer4 {
+    background-color: darkblue;
     grid-area: 'answer4';
 }
 #restart {

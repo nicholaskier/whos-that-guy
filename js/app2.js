@@ -115,7 +115,8 @@ function init() {
     score = 0
     startButton.style.visibility = "visible"
     restartButton.style.visibility = "hidden"
-    questionOfRound.innerHTML = `10 Rounds, 10 Guys!  You've seen them before, but where?!`
+    questionOfRound.innerText = `10 Rounds, 10 Guys! 
+    You've seen them before, but where?!`
     answerBtn1.style.visibility = "hidden"
     answerBtn2.style.visibility = "hidden"
     answerBtn3.style.visibility = "hidden"
@@ -289,26 +290,30 @@ function checkAnswer(event) {
 
 function checkRank() {
     console.log(score)
+    answerBtn1.style.visibility = "hidden"
+    answerBtn2.style.visibility = "hidden"
+    answerBtn3.style.visibility = "hidden"
+    answerBtn4.style.visibility = "hidden"
     playerScore.innerHTML = parseInt(score)
     restartButton.style.visibility = "visible"
     if ( score == 0){
-        quesBox.innerHTML = `${ranks.neelix}`
+        questionOfRound.innerHTML = `${ranks.neelix}`
         image.src = `${ranks.neelixImg}`
     }
     if ( score > 0 && score <= 3){
-        quesBox.innerHTML = `${ranks.ensign}`
+        questionOfRound.innerHTML = `${ranks.ensign}`
         image.src = `${ranks.ensignImg}`
     }
     if ( score >= 4 && score <= 6){
-        quesBox.innerHTML = `${ranks.lieutenant}`
+        questionOfRound.innerHTML = `${ranks.lieutenant}`
         image.src = `${ranks.lieutenantImG}`
     }
     if ( score >= 7 && score <= 9){
-        quesBox.innerHTML = `${ranks.commander}`
+        questionOfRound.innerHTML = `${ranks.commander}`
         image.src = `${ranks.commanderImg}`
     }
     if ( score == 10){
-        quesBox.innerHTML = `${ranks.captain}`
+        questionOfRound.innerHTML = `${ranks.captain}`
         image.src = `${ranks.captainImg}`
     }
 
