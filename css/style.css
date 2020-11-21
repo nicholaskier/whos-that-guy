@@ -68,6 +68,10 @@
 
 #question-box {
     margin: 40px;
+    background: #595959; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #595959 -1%, #666666 -1%, #2c2c2c -1%, #4c4c4c 0%, #595959 0%, #666666 0%, #666666 0%, #2c2c2c 0%, #000000 1%, #2c2c2c 2%, #2c2c2c 2%, #000000 4%, #1c1c1c 7%, #1c1c1c 7%, #131313 18%, #131313 18%, #2b2b2b 27%, #2b2b2b 27%, #111111 60%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #595959 -1%,#666666 -1%,#2c2c2c -1%,#4c4c4c 0%,#595959 0%,#666666 0%,#666666 0%,#2c2c2c 0%,#000000 1%,#2c2c2c 2%,#2c2c2c 2%,#000000 4%,#1c1c1c 7%,#1c1c1c 7%,#131313 18%,#131313 18%,#2b2b2b 27%,#2b2b2b 27%,#111111 60%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #595959 -1%,#666666 -1%,#2c2c2c -1%,#4c4c4c 0%,#595959 0%,#666666 0%,#666666 0%,#2c2c2c 0%,#000000 1%,#2c2c2c 2%,#2c2c2c 2%,#000000 4%,#1c1c1c 7%,#1c1c1c 7%,#131313 18%,#131313 18%,#2b2b2b 27%,#2b2b2b 27%,#111111 60%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     background-color: black;
     height: 350px;
     width: 400px;
@@ -83,11 +87,11 @@
 .answer {
     background-color: lightpink;
     font-size: 20px;
-    border-radius: 16px;
+    border-radius: 30px;
     height: 60px;
     border: none;
     margin: 5px;
-    color: white;
+    color: black;
 }
 
 #question {
@@ -96,22 +100,22 @@
 }
 
 #answer1 {
-    background-color: goldenrod;
+    background-color: #cc6699;
     grid-area: 'answer1';
 }
 
 #answer2 {
-    background-color: darkblue;
+    background-color: #cc99cc;
     grid-area: 'answer2';
 }
 
 #answer3 {
-    background-color: goldenrod;
+    background-color: #ff9900;
     grid-area: 'answer3';
 }
 
 #answer4 {
-    background-color: darkblue;
+    background-color: #9966ff;
     grid-area: 'answer4';
 }
 #restart {
