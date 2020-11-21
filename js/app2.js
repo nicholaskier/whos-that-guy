@@ -115,6 +115,7 @@ function init() {
     score = 0
     startButton.style.visibility = "visible"
     restartButton.style.visibility = "hidden"
+    questionOfRound.innerHTML = `10 Rounds, 10 Guys!  You've seen them before, but where?!`
     answerBtn1.style.visibility = "hidden"
     answerBtn2.style.visibility = "hidden"
     answerBtn3.style.visibility = "hidden"
@@ -289,8 +290,6 @@ function checkAnswer(event) {
 function checkRank() {
     console.log(score)
     playerScore.innerHTML = parseInt(score)
-    quesBox.style.visibility = "hidden"
-    rank.style.visibility = "visible"
     restartButton.style.visibility = "visible"
     if ( score == 0){
         quesBox.innerHTML = `${ranks.neelix}`
