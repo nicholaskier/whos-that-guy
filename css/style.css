@@ -11,31 +11,11 @@ body {
     height: 100%;
 }
 
-#title {
-    font-family: 'Permanent Marker', cursive;
-    background-color: #9966ff;
-    font-size: 20px;
-    height: 150px;
-    color: black;
-    width: 400px;
-    border-radius: 30px;
-    align-content: center;
-    justify-content: center;
-    text-align: center;
+#space {
+    height: 100px;
+    width: 500px;
 }
 
-h1 {
-    text-decoration: underline;
-}
-
-h2 {
-    margin: -20px;
-    font-family: 'Timmana', sans-serif;
-    color: #ff9900;
-    font-size: 40px;
-    font-style: italic;
-    font-weight: bold;
-}
 
 #start {
     font-family: 'Share Tech Mono', monospace;
