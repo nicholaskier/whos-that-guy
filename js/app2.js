@@ -5,15 +5,15 @@ let score
 
 let ranks = {
     neelix : `You got 0 CORRECT. :( Such a Neelix. I mean, we can make you ship's ambassador or something if it would make you feel better`,
-    neeliximg : ``,
+    neeliximg : `https://agnesashe.files.wordpress.com/2017/09/neelix-star-trek-voyager.jpg`,
     ensign : `You got 1-3 CORRECT. Congrats, Ensign! People might call you 'pretty useless', but hey, at least they call you pretty.`,
-    ensignImg : ``,
+    ensignImg : `http://treklad.co.uk/wp-content/uploads/2020/05/ensign-1024x576.jpg`,
     lieutenant : `You got 4-6 CORRECT. Congrats, Lieutenant! You can sit in the big chair when literally everyone else on the ship dissappears if you accidentally kill God or something.`,
-    lieutenantImG : ``,
+    lieutenantImG : `https://i0.wp.com/www.tor.com/wp-content/uploads/2020/03/Trek-Voyager-cathexis05.jpg?type=vertical&ssl=1`,
     commander : `You got 7-9 CORRECT. Congrats, Commander! Try to keep it in your pants!`,
-    commanderImg : ``,
+    commanderImg : `https://www.geocities.ws/jason22381/Chakotay.jpg`,
     captain : `You got 10 CORRECT. Oh Captain, MY Captain! You're never in the wrong, even if everyone under you thinks you're making a terrible mistake.`,
-    captainImg : ``
+    captainImg : `https://indianapublicmedia.org/images/inbox-images/janeway-mulgrew-headshot.jpg`
 }
 
 let prompts = [
@@ -131,6 +131,7 @@ function init() {
 startButton.addEventListener('click', startGame)
 
 function startGame() {
+    questionOfRound.style.margin = "18px -20px"
     currRound.style.visibility = "visible"
     playerScore.style.visibility= "visible"
     quesBox.style.visibility = "visible"
