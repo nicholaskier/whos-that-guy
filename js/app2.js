@@ -22,70 +22,70 @@ let prompts = [
     question : `Wait, who's he again?`,
     correctAns : `Wallace Shawn (Princess Bride)`,
     answers : [`Tony Todd (Candyman)`, `Jonathan Banks (Breaking Bad)`, `Kurtwood Smith (That 70's Show)`],
-    image : `https://i.imgur.com/B26FTeF.jpeg`
+    image : `/images/walalceshawn.jpg`
     },
 
     two = {
     question : `Hold up, you know this one...`,
     correctAns : `Christopher Lloyd (Back to the Future)`,
     answers : [`Scott Thompson (Kids in the Hall)`, `Jim O'Heir (Parks and Rec)`, `Jason Alexander (Seinfeld)`],
-    image : `https://i.imgur.com/gSkLXBv.jpg`
+    image : `/images/christopherlloyd.jpg`
     },
 
     three =  {
     question : `Oh! Oh, yeah! THAT guy! ...um...`,
     correctAns : `Iggy Pop (Iggy Pop)`,
     answers : [`Mick Fleetwood (Fleetwood Mac)`, `Wallace Shawn (Princess Bride)`, `Tony Todd (Candyman)`],
-    image : `https://i.imgur.com/ibdfNnj.jpeg`
+    image : `/images/Iggy-Pop-deepspace1hgjghj_465_396_int.jpg`
     },
 
     four = {
     question : `Well, this is an easy one ...`,
     correctAns : `Jason Alexander (Seinfeld)`,
     answers : [`Jim O'Heir (Parks and Rec)`, `Kurtwood Smith (Kids in the Hall)`, `Iggy Pop (Iggy Pop)`],
-    image : `https://i.imgur.com/4yTTeBh.jpeg`
+    image : `/images/jasonalexander.jpg`
     },
 
     five = {
     question : `How are you supposed to tell under all that loaf?`,
     correctAns : `Mick Fleetwood (Fleetwood Mac)`,
     answers : [`Kurtwood Smith (That 70's Show)`, `Christopher Lloyd (Back to the Future)`, `Tony Todd (Candyman)`],
-    image : `https://i.imgur.com/nFaIXtA.jpeg`
+    image : `/images/Antedian_dignitary.jpg`
     },
 
     six = {
     question : `HOLD UP...holdupholdupholdup..`,
     correctAns : `Jonathan Banks (Breaking Bad)`,
     answers : [`Scott Thompson (Kids in the Hall)`, `Jim O'Heir (Parks and Rec)`, `Wallace Shawn (Princess Bride)`],
-    image : `https://i.imgur.com/ZRsi948.jpg`
+    image : `/images/jonathanbanks.jpg`
     },
 
     seven =  {
     question : `...it's on the tip of your tongue`,
     correctAns : `Scott Thompson (Kids in the Hall)`,
     answers : [`Mick Fleetwood (Fleetwood Mac)`, `Christopher Lloyd (Back to the Future)`, `Jason Alexander (Seinfeld)`],
-    image : `https://i.imgur.com/ioO8MuI.jpg`
+    image : `/images/scottthompson.jpg`
     },
 
     eight = {
     question : `You've definitely seen THAT dude.`,
     correctAns : `Kurtwood Smith (That 70's Show)`,
     answers : [`Wallace Shawn (Princess Bride)`, `Iggy Pop (Iggy Pop)`, `Mick Fleetwood (Fleetwood Mac)`],
-    image : `https://i.imgur.com/hKkTAUz.jpg`
+    image : `/images/kurtwoodsmith.jpg`
     },
 
     nine = {
     question : `GUH! Where is he FROM?!`,
     correctAns : `Jim O'Heir (Parks and Rec)`,
     answers : [`Jason Alexander (Seinfeld)`, `Scott Thompson (Kids in the Hall)`, `Kurtwood Smith (That 70's Show)`],
-    image : `https://i.imgur.com/7uQuyO4.jpg`
+    image : `/images/jimoheir.jpg`
     },
 
     ten =  {
     question : `Ok, last one. You've got this!`,
     correctAns : `Tony Todd (Candyman)`,
     answers : [`Mick Fleetwood (Fleetwood Mac)`, `Wallace Shawn (Princess Bride)`, `Jonathan Banks (Breaking Bad)`],
-    image : `https://i.imgur.com/UPKlgox.jpeg`
+    image : `/images/tonytodd.jpg`
     }
 ]
 
@@ -95,6 +95,7 @@ console.log(prompts[0].correctAns)
 
 const startButton = document.getElementById('start')
 const restartButton = document.getElementById('restart')
+const body = document.getElementById('body')
 const quesBox = document.getElementById('question-box')
 const darkMode = document.getElementById('dark-mode')
 const playerScore = document.getElementById('score')
@@ -121,10 +122,9 @@ function init() {
     questionOfRound.innerText = `Welcome to
     "Who's That Guy!"
 
-
     10 Rounds, 10 Guys! 
     You've seen them before, but where?!`
-    questionOfRound.style.margin = "40px -20px"
+    questionOfRound.style.margin = "45px -20px"
     questionOfRound.style.fontSize = "30px"
     currRound.style.visibility = "hidden"
     playerScore.style.visibility= "hidden"
@@ -161,14 +161,7 @@ function startGame() {
     answerBtn3.style.visibility = "visible"
     answerBtn4.style.visibility = "visible"
 
-    let timeLeft = 60
-    let timer = setInterval(function(){
-        document.getElementById('timer').textContent = timeLeft
-        timeLeft -= 1
-        if (timeLeft < 0){
-            document.getElementById('timer').textContent = ''
-        }
-    },1000)
+    
     currRound.innerHTML = parseInt(round) + 1
     console.log(parseInt(round))
     playerScore.innerHTML = parseInt(score)
@@ -333,6 +326,11 @@ function checkRank() {
     playerScore.innerHTML = parseInt(score)
     restartButton.style.visibility = "visible"
     if ( score == 0){
+        setTimeout(function() {
+            let audioVar4 = new Audio(`/audio/whammy-fogghorn-remaster.mp3`)
+            audioVar4.play()
+            audioVar4.volume = .3
+        }, 1500)
         questionOfRound.innerHTML = `${ranks.neelix}`
         image.src = `${ranks.neelixImg}`
     }
@@ -340,7 +338,7 @@ function checkRank() {
         setTimeout(function(){
             let audioVar3 = new Audio(`/audio/tng_warp_exit.mp3`)
             audioVar3.play()
-            audioVar3.volume = .4;
+            audioVar3.volume = .3;
         }, 1500)
         questionOfRound.innerHTML = `${ranks.ensign}`
         image.src = `${ranks.ensignImg}`
@@ -349,7 +347,7 @@ function checkRank() {
         setTimeout(function(){
             let audioVar3 = new Audio(`/audio/tng_warp_exit.mp3`)
             audioVar3.play()
-            audioVar3.volume = .4;
+            audioVar3.volume = .3;
         }, 1500)
         questionOfRound.innerHTML = `${ranks.lieutenant}`
         image.src = `${ranks.lieutenantImG}`
@@ -358,7 +356,7 @@ function checkRank() {
         setTimeout(function(){
             let audioVar3 = new Audio(`/audio/tng_warp_exit.mp3`)
             audioVar3.play()
-            audioVar3.volume = .4;
+            audioVar3.volume = .3;
         }, 1500)
         questionOfRound.innerHTML = `${ranks.commander}`
         image.src = `${ranks.commanderImg}`
@@ -380,14 +378,20 @@ restartButton.addEventListener("click", restart)
 function restart() {
 
     init()
-
+    
 }
 
 
 darkMode.addEventListener('click', function() {
     if (darkMode.innerHTML == 'Dark Mode') {
+        body.style.backgroundImage = 'url(/images/Wallpaper-Space-HD.jpg)'
         gameScreen.style.backgroundColor = "darkblue"
-        gameScreen.style.borderColor = "lightblue"
+        gameScreen.style.borderColor = "purple"
         darkMode.innerHTML = 'Light Mode'
+    }else {
+        body.style.backgroundImage = 'url(/images/lightwall.jpg)'
+        gameScreen.style.backgroundColor = "grey"
+        gameScreen.style.borderColor = "darkgray"
+        darkMode.innerHTML = 'Dark Mode'
     }
 })

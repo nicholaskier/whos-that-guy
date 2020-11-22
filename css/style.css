@@ -1,7 +1,7 @@
 
 
 body {
-    background-image: url(https://www.technocrazed.com/wp-content/uploads/2015/12/HD-Space-Wallpaper-For-Background-36.jpg);
+    background-image: url(/images/lightwall.jpg);
     background-size: cover;
     margin: auto;
     display: grid;
@@ -170,7 +170,7 @@ body {
     margin: -53px;
 }
 
-#timer {
+/* #timer {
     font-family: 'Share Tech Mono', monospace;
     background-color: #cc6699;
     width: 100px;
@@ -181,13 +181,13 @@ body {
     height: 20px;
     padding: 5px;
     margin: 22px;
-}
+} */
 #dark-mode {
     font-family: 'Share Tech Mono', monospace;
     font-weight: bolder;
     width: 100px;
-    height: 30px;
-    margin: 22px;
+    height: 25px;
+    margin: 25px 60px;
     background-color: #ff9900;
     border-radius: 30px;
     border: none;
