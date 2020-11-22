@@ -1,6 +1,7 @@
 let timeLeft
 let round
 let score
+let theme
 
 
 let ranks = {
@@ -116,9 +117,11 @@ function init() {
     image.src = "https://i2.wp.com/media4.giphy.com/media/26BRqPg05olzXG1bi/giphy.gif"
     startButton.style.visibility = "visible"
     restartButton.style.visibility = "hidden"
-    questionOfRound.innerText = `10 Rounds, 10 Guys! 
+    questionOfRound.innerText = `Welcome to "Who's That Guy!"
+    10 Rounds, 10 Guys! 
     You've seen them before, but where?!`
-    questionOfRound.style.margin = "120px -20px"
+    questionOfRound.style.margin = "80px -20px"
+    questionOfRound.style.fontSize = "30px"
     currRound.style.visibility = "hidden"
     playerScore.style.visibility= "hidden"
     answerBtn1.style.visibility = "hidden"
@@ -132,6 +135,7 @@ startButton.addEventListener('click', startGame)
 
 function startGame() {
     questionOfRound.style.margin = "18px -20px"
+    questionOfRound.style.fontSize = "23px"
     currRound.style.visibility = "visible"
     playerScore.style.visibility= "visible"
     quesBox.style.visibility = "visible"
@@ -297,7 +301,8 @@ function checkAnswer(event) {
 
 function checkRank() {
     console.log(score)
-    questionOfRound.style.margin = "60px -20px"
+    questionOfRound.style.margin = "70px -20px"
+    questionOfRound.style.fontSize = "30px"
     currRound.style.visibility = "hidden"
     answerBtn1.style.visibility = "hidden"
     answerBtn2.style.visibility = "hidden"

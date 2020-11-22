@@ -1,7 +1,7 @@
 
 
 body {
-    background-image: url(https://www.technocrazed.com/wp-content/uploads/2015/12/HD-Space-Wallpaper-For-Background-5.jpg);
+    background-image: url(https://www.technocrazed.com/wp-content/uploads/2015/12/HD-Space-Wallpaper-For-Background-36.jpg);
     background-size: cover;
     margin: auto;
     display: grid;
@@ -15,6 +15,7 @@ body {
     font-family: 'Permanent Marker', cursive;
     background-color: #9966ff;
     font-size: 20px;
+    height: 150px;
     color: black;
     width: 400px;
     border-radius: 30px;
@@ -28,8 +29,12 @@ h1 {
 }
 
 h2 {
+    margin: -20px;
     font-family: 'Timmana', sans-serif;
     color: #ff9900;
+    font-size: 40px;
+    font-style: italic;
+    font-weight: bold;
 }
 
 #start {
@@ -41,10 +46,11 @@ h2 {
     height: 120px;
     width: 405px;
     place-items: center;
-    transform: translate(0%, 222%) ;
+    transform: translate(0%, 158%) ;
 }
 
 #game-screen {
+    margin: -75px;
     background: grey;
     align-content: center;
     align-items: center;
