@@ -21,6 +21,7 @@ body {
 }
 
 #start {
+    font-family: 'Share Tech Mono', monospace;
     font-size: 60px;
     background-color: #9699cc;
     border-radius: 30px;
@@ -63,15 +64,20 @@ body {
 }
 
 #round {
-    margin: 0 60px;
+    margin: 5px;
+    font-family: 'Share Tech Mono', monospace;
     width: 50px;
     background-color: #cc99cc;
     border-radius: 20px;
     text-indent: 20px;
+
+    
     
 }
 
 #score {
+    margin: 5px;
+    font-family: 'Share Tech Mono', monospace;
     width: 50px;
     background-color: #9699cc;
     border-radius: 20px;
@@ -103,26 +109,36 @@ body {
     margin: 20px;
 }
 
+#roundscore {
+    display: flex;
+    margin: -10px 250px;
+}
+
 #answer-box {
-    margin: 20px;
+    margin: 50px;
     display: grid;
 }
 
 .answer {
+    padding: 5px;
+    font-family: 'Share Tech Mono', monospace;
+    font-weight: bolder;
     background-color: lightpink;
-    font-size: 20px;
+    font-size: 18px;
     border-radius: 30px;
-    height: 40px;
+    height: 50px;
     border: none;
-    margin: 10px;
+    margin: 17px 0 0 0;
     color: black;
 }
 
 #question {
+    margin: 18px -20px;
     position: absolute;
     font-family: 'Share Tech Mono', monospace;
-    font-size: 25px;
-    width: 200px;
+    font-size: 23px;
+    width: 400px;
+    text-align: center;
     color: white;
     grid-area: 'question';
 }
@@ -148,10 +164,13 @@ body {
 }
 
 #bottom-row {
+    font-family: 'Share Tech Mono', monospace;
     display: flex;
+    margin: -53px;
 }
 
 #timer {
+    font-family: 'Share Tech Mono', monospace;
     background-color: #cc6699;
     width: 100px;
     border-radius: 30px;
@@ -160,6 +179,9 @@ body {
     margin: 22px;
 }
 #dark-mode {
+    font-family: 'Share Tech Mono', monospace;
+    font-weight: bolder;
+    width: 100px;
     height: 30px;
     margin: 22px;
     background-color: #ff9900;
@@ -168,6 +190,13 @@ body {
 }
 
 #restart {
+    margin: 22px;
+    font-family: 'Share Tech Mono', monospace;
+    background-color: #9699cc;
+    border-radius: 30px;
+    border: none;
+    width: 100px;
+    height: 30px;
     visibility: "visible";
 }
 
