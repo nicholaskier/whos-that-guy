@@ -4,15 +4,15 @@ let score
 
 
 let ranks = {
-    neelix : `0 CORRECT. Such a Neelix. I mean, we can make you ship's ambassador or something if it would make you feel better`,
+    neelix : `You got 0 CORRECT. :( Such a Neelix. I mean, we can make you ship's ambassador or something if it would make you feel better`,
     neeliximg : ``,
-    ensign : `1-3 CORRECT. Congrats, Ensign! People might call you 'pretty useless', but hey, at least they call you pretty.`,
+    ensign : `You got 1-3 CORRECT. Congrats, Ensign! People might call you 'pretty useless', but hey, at least they call you pretty.`,
     ensignImg : ``,
-    lieutenant : `4-6 CORRECT. Congrats, Lieutenant! You can sit in the big chair when literally everyone else on the ship dissappears if you accidentally kill God or something.`,
+    lieutenant : `You got 4-6 CORRECT. Congrats, Lieutenant! You can sit in the big chair when literally everyone else on the ship dissappears if you accidentally kill God or something.`,
     lieutenantImG : ``,
-    commander : `7-9 CORRECT. Congrats, Commander! Try to keep it in your pants!`,
+    commander : `You got 7-9 CORRECT. Congrats, Commander! Try to keep it in your pants!`,
     commanderImg : ``,
-    captain : `10 CORRECT. Oh Captain, MY Captain! You're never in the wrong, even if everyone under you thinks you're making a terrible mistake.`,
+    captain : `You got 10 CORRECT. Oh Captain, MY Captain! You're never in the wrong, even if everyone under you thinks you're making a terrible mistake.`,
     captainImg : ``
 }
 
