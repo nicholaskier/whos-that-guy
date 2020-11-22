@@ -16,6 +16,10 @@ body {
     width: 800px;
 }
 
+#bottomspace {
+    height: 200px;
+    width: 800px;
+}
 
 #start {
     font-family: 'Share Tech Mono', monospace;
