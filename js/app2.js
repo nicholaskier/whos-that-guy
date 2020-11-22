@@ -1,7 +1,7 @@
 let timeLeft
 let round
 let score
-let theme
+
 
 
 let ranks = {
@@ -131,12 +131,21 @@ function init() {
     answerBtn2.style.visibility = "hidden"
     answerBtn3.style.visibility = "hidden"
     answerBtn4.style.visibility = "hidden"
+    let audioVar = new Audio(`/audio/OpeningCredits.mp3`)
+    audioVar.play()
+    audioVar.volume = .3;
 }
 
 
 startButton.addEventListener('click', startGame)
+// startButton.addEventListener('click', (e)=> {
+//     let audioVar = new Audio(`/audio/OpeningCredits.mp3`)
+//     audioVar.play()
+// })
+
 
 function startGame() {
+    
     questionOfRound.style.margin = "18px -20px"
     questionOfRound.style.fontSize = "23px"
     currRound.style.visibility = "visible"
@@ -292,8 +301,14 @@ function checkAnswer(event) {
     console.log(score)
     currRound.innerHTML = parseInt(round) + 1
     if (event.target.textContent != `${prompts[round].correctAns}`){
+        let audioVar1 = new Audio(`/audio/inputalgorithmnotaccepted_ep.mp3`)
+        audioVar1.play()
+        audioVar1.volume = .4;
         
     } else {
+        let audioVar2 = new Audio(`/audio/affirmative1_ep.mp3`)
+        audioVar2.play()
+        audioVar2.volume = .3;
         score += 1
         
     }
@@ -319,18 +334,38 @@ function checkRank() {
         image.src = `${ranks.neelixImg}`
     }
     if ( score > 0 && score <= 3){
+        setTimeout(function(){
+            let audioVar3 = new Audio(`/audio/tng_warp_exit.mp3`)
+            audioVar3.play()
+            audioVar3.volume = .4;
+        }, 1500)
         questionOfRound.innerHTML = `${ranks.ensign}`
         image.src = `${ranks.ensignImg}`
     }
     if ( score >= 4 && score <= 6){
+        setTimeout(function(){
+            let audioVar3 = new Audio(`/audio/tng_warp_exit.mp3`)
+            audioVar3.play()
+            audioVar3.volume = .4;
+        }, 1500)
         questionOfRound.innerHTML = `${ranks.lieutenant}`
         image.src = `${ranks.lieutenantImG}`
     }
     if ( score >= 7 && score <= 9){
+        setTimeout(function(){
+            let audioVar3 = new Audio(`/audio/tng_warp_exit.mp3`)
+            audioVar3.play()
+            audioVar3.volume = .4;
+        }, 1500)
         questionOfRound.innerHTML = `${ranks.commander}`
         image.src = `${ranks.commanderImg}`
     }
     if ( score == 10){
+        setTimeout(function(){
+            let audioVar3 = new Audio(`/audio/tng_warp_exit.mp3`)
+            audioVar3.play()
+            audioVar3.volume = .4;
+        }, 1500)
         questionOfRound.innerHTML = `${ranks.captain}`
         image.src = `${ranks.captainImg}`
     }
