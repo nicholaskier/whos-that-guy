@@ -23,14 +23,13 @@ body {
 #start {
     font-family: 'Share Tech Mono', monospace;
     font-size: 60px;
-    background-color: #9699cc;
-    border-radius: 30px;
+    background-color: blue;
     color: white;
     border: none;
-    height: 75px;
-    width: 200px;
+    height: 120px;
+    width: 405px;
     place-items: center;
-    transform: translate(0%, 300%) ;
+    transform: translate(0%, 222%) ;
 }
 
 #game-screen {

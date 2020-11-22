@@ -113,10 +113,12 @@ init()
 function init() {
     round = 0
     score = 0
+    image.src = "https://i2.wp.com/media4.giphy.com/media/26BRqPg05olzXG1bi/giphy.gif"
     startButton.style.visibility = "visible"
     restartButton.style.visibility = "hidden"
     questionOfRound.innerText = `10 Rounds, 10 Guys! 
     You've seen them before, but where?!`
+    questionOfRound.style.margin = "120px -20px"
     currRound.style.visibility = "hidden"
     playerScore.style.visibility= "hidden"
     answerBtn1.style.visibility = "hidden"
@@ -294,6 +296,7 @@ function checkAnswer(event) {
 
 function checkRank() {
     console.log(score)
+    questionOfRound.style.margin = "60px -20px"
     currRound.style.visibility = "hidden"
     answerBtn1.style.visibility = "hidden"
     answerBtn2.style.visibility = "hidden"
