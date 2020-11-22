@@ -304,6 +304,7 @@ function checkAnswer(event) {
 
 function checkRank() {
     console.log(score)
+    confetti.start(3000); 
     questionOfRound.style.margin = "70px -20px"
     questionOfRound.style.fontSize = "30px"
     currRound.style.visibility = "hidden"
