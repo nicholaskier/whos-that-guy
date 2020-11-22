@@ -117,10 +117,13 @@ function init() {
     image.src = "https://i2.wp.com/media4.giphy.com/media/26BRqPg05olzXG1bi/giphy.gif"
     startButton.style.visibility = "visible"
     restartButton.style.visibility = "hidden"
-    questionOfRound.innerText = `Welcome to "Who's That Guy!"
+    questionOfRound.innerText = `Welcome to
+    "Who's That Guy!"
+
+
     10 Rounds, 10 Guys! 
     You've seen them before, but where?!`
-    questionOfRound.style.margin = "80px -20px"
+    questionOfRound.style.margin = "40px -20px"
     questionOfRound.style.fontSize = "30px"
     currRound.style.visibility = "hidden"
     playerScore.style.visibility= "hidden"
