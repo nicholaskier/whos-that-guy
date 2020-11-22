@@ -96,6 +96,7 @@ console.log(prompts[0].correctAns)
 const startButton = document.getElementById('start')
 const restartButton = document.getElementById('restart')
 const quesBox = document.getElementById('question-box')
+const darkMode = document.getElementById('dark-mode')
 const playerScore = document.getElementById('score')
 const currRound   = document.getElementById('round')
 const gameScreen  = document.getElementById('game-screen')
@@ -132,8 +133,10 @@ function init() {
     answerBtn3.style.visibility = "hidden"
     answerBtn4.style.visibility = "hidden"
     let audioVar = new Audio(`/audio/OpeningCredits.mp3`)
+    document.getElementById("body").addEventListener('click', e =>
+    audioVar.play())
     audioVar.play()
-    audioVar.volume = .3;
+    audioVar.volume = .2;
 }
 
 
@@ -381,4 +384,10 @@ function restart() {
 }
 
 
-
+darkMode.addEventListener('click', function() {
+    if (darkMode.innerHTML == 'Dark Mode') {
+        gameScreen.style.backgroundColor = "darkblue"
+        gameScreen.style.borderColor = "lightblue"
+        darkMode.innerHTML = 'Light Mode'
+    }
+})
