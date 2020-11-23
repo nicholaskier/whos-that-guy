@@ -6,15 +6,15 @@ let score
 
 let ranks = {
     neelix : `You got 0 CORRECT. :( Such a Neelix. I mean, we can make you ship's ambassador or something if it would make you feel better`,
-    neeliximg : `https://agnesashe.files.wordpress.com/2017/09/neelix-star-trek-voyager.jpg`,
+    neelixImg : `/images/neelix.jpg`,
     ensign : `You got 1-3 CORRECT. Congrats, Ensign! People might call you 'pretty useless', but hey, at least they call you pretty.`,
-    ensignImg : `http://treklad.co.uk/wp-content/uploads/2020/05/ensign-1024x576.jpg`,
-    lieutenant : `You got 4-6 CORRECT. Congrats, Lieutenant! You can sit in the big chair when literally everyone else on the ship dissappears if you accidentally kill God or something.`,
-    lieutenantImG : `https://i0.wp.com/www.tor.com/wp-content/uploads/2020/03/Trek-Voyager-cathexis05.jpg?type=vertical&ssl=1`,
-    commander : `You got 7-9 CORRECT. Congrats, Commander! Try to keep it in your pants!`,
-    commanderImg : `https://www.geocities.ws/jason22381/Chakotay.jpg`,
+    ensignImg : `/images/ensign.jpg`,
+    lieutenant : `You got 4-6 CORRECT. Congrats, Lieutenant! Logically, you should have done better.`,
+    lieutenantImG : `/images/tuvok.jpg`,
+    commander : `You got 7-9 CORRECT. Congrats, Commander! A-koo-chee-moya, indeed!`,
+    commanderImg : `/images/chakotay.jpg`,
     captain : `You got 10 CORRECT. Oh Captain, MY Captain! You're never in the wrong, even if everyone under you thinks you're making a terrible mistake.`,
-    captainImg : `https://indianapublicmedia.org/images/inbox-images/janeway-mulgrew-headshot.jpg`
+    captainImg : `/images/janeway.jpg`
 }
 
 let prompts = [
@@ -101,7 +101,6 @@ const darkMode = document.getElementById('dark-mode')
 const playerScore = document.getElementById('score')
 const currRound   = document.getElementById('round')
 const gameScreen  = document.getElementById('game-screen')
-// const answerButtons = document.getElementById('answer')
 const answerBtn1 = document.getElementById('answer1')
 const answerBtn2 = document.getElementById('answer2')
 const answerBtn3 = document.getElementById('answer3')
@@ -315,7 +314,6 @@ function checkAnswer(event) {
 
 function checkRank() {
     console.log(score)
-    confetti.start(3000); 
     questionOfRound.style.margin = "70px -20px"
     questionOfRound.style.fontSize = "30px"
     currRound.style.visibility = "hidden"
@@ -331,6 +329,7 @@ function checkRank() {
             audioVar4.play()
             audioVar4.volume = .3
         }, 1500)
+        confetti.start(7000); 
         questionOfRound.innerHTML = `${ranks.neelix}`
         image.src = `${ranks.neelixImg}`
     }
@@ -340,6 +339,7 @@ function checkRank() {
             audioVar3.play()
             audioVar3.volume = .3;
         }, 1500)
+        confetti.start(7000); 
         questionOfRound.innerHTML = `${ranks.ensign}`
         image.src = `${ranks.ensignImg}`
     }
@@ -349,6 +349,7 @@ function checkRank() {
             audioVar3.play()
             audioVar3.volume = .3;
         }, 1500)
+        confetti.start(7000); 
         questionOfRound.innerHTML = `${ranks.lieutenant}`
         image.src = `${ranks.lieutenantImG}`
     }
@@ -358,6 +359,7 @@ function checkRank() {
             audioVar3.play()
             audioVar3.volume = .3;
         }, 1500)
+        confetti.start(7000); 
         questionOfRound.innerHTML = `${ranks.commander}`
         image.src = `${ranks.commanderImg}`
     }
@@ -367,6 +369,7 @@ function checkRank() {
             audioVar3.play()
             audioVar3.volume = .4;
         }, 1500)
+        confetti.start(7000); 
         questionOfRound.innerHTML = `${ranks.captain}`
         image.src = `${ranks.captainImg}`
     }
