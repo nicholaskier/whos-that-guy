@@ -132,18 +132,14 @@ function init() {
     answerBtn3.style.visibility = "hidden"
     answerBtn4.style.visibility = "hidden"
     let audioVar = new Audio(`/audio/OpeningCredits.mp3`)
-    document.getElementById("body").addEventListener('click', e =>
-    audioVar.play())
-    audioVar.play()
-    audioVar.volume = .2;
+    document.getElementById("body").addEventListener('click', e => {
+        audioVar.play()
+        audioVar.volume = .2;
+    })
 }
 
 
 startButton.addEventListener('click', startGame)
-// startButton.addEventListener('click', (e)=> {
-//     let audioVar = new Audio(`/audio/OpeningCredits.mp3`)
-//     audioVar.play()
-// })
 
 
 function startGame() {
