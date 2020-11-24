@@ -1,4 +1,3 @@
-let timeLeft
 let round
 let score
 
@@ -89,10 +88,6 @@ let prompts = [
     }
 ]
 
-
-console.log(prompts[0].correctAns)
-
-
 const startButton = document.getElementById('start')
 const restartButton = document.getElementById('restart')
 const body = document.getElementById('body')
@@ -108,7 +103,6 @@ const answerBtn4 = document.getElementById('answer4')
 const questionOfRound = document.getElementById('question')
 const rank = document.getElementById('ranking')
 const image = document.getElementById('image')
-
 
 init()
 
@@ -138,9 +132,7 @@ function init() {
     })
 }
 
-
 startButton.addEventListener('click', startGame)
-
 
 function startGame() {
     
@@ -155,30 +147,22 @@ function startGame() {
     answerBtn2.style.visibility = "visible"
     answerBtn3.style.visibility = "visible"
     answerBtn4.style.visibility = "visible"
-
-    
     currRound.innerHTML = parseInt(round) + 1
-    console.log(parseInt(round))
     playerScore.innerHTML = parseInt(score)
     render()
 }
-
-
 
 answerBtn1.addEventListener("click", checkAnswer)
 answerBtn2.addEventListener("click", checkAnswer)
 answerBtn3.addEventListener("click", checkAnswer)
 answerBtn4.addEventListener("click", checkAnswer)
 
-
 function render() {
     if (round == 0){
-        console.log(score)
         answerBtn2.textContent = `${prompts[0].correctAns}`
         answerBtn1.textContent = `${prompts[0].answers[0]}`
         answerBtn3.textContent = `${prompts[0].answers[1]}`
         answerBtn4.textContent = `${prompts[0].answers[2]}`
-        console.log(image.src)
         image.src = `${prompts[0].image}`
         questionOfRound.innerHTML = `${prompts[0].question}`
         checkAnswer()
@@ -188,104 +172,86 @@ function render() {
         answerBtn2.textContent = `${prompts[1].answers[0]}`
         answerBtn1.textContent = `${prompts[1].answers[1]}`
         answerBtn4.textContent = `${prompts[1].answers[2]}`
-        console.log(image.src)
         image.src = `${prompts[1].image}`
         questionOfRound.innerHTML = `${prompts[1].question}`
         checkAnswer()
     }else if (round == 2) {
         playerScore.innerHTML = parseInt(score)
-        console.log(score)
         answerBtn1.textContent = `${prompts[2].correctAns}`
         answerBtn2.textContent = `${prompts[2].answers[0]}`
         answerBtn3.textContent = `${prompts[2].answers[1]}`
         answerBtn4.textContent = `${prompts[2].answers[2]}`
-        console.log(image.src)
         image.src = `${prompts[2].image}`
         questionOfRound.innerHTML = `${prompts[2].question}`
         checkAnswer()
     }else if (round == 3) {
         playerScore.innerHTML = parseInt(score)
-        console.log(score)
         answerBtn4.textContent = `${prompts[3].correctAns}`
         answerBtn2.textContent = `${prompts[3].answers[0]}`
         answerBtn3.textContent = `${prompts[3].answers[1]}`
         answerBtn1.textContent = `${prompts[3].answers[2]}`
-        console.log(image.src)
         image.src = `${prompts[3].image}`
         questionOfRound.innerHTML = `${prompts[3].question}`
         checkAnswer()
     }else if (round == 4) {
         playerScore.innerHTML = parseInt(score)
-        console.log(score)
         answerBtn2.textContent = `${prompts[4].correctAns}`
         answerBtn1.textContent = `${prompts[4].answers[0]}`
         answerBtn3.textContent = `${prompts[4].answers[1]}`
         answerBtn4.textContent = `${prompts[4].answers[2]}`
-        console.log(image.src)
         image.src = `${prompts[4].image}`
         questionOfRound.innerHTML = `${prompts[4].question}`
         checkAnswer()
     }else if (round == 5) {
         playerScore.innerHTML = parseInt(score)
-        console.log(score)
         answerBtn3.textContent = `${prompts[5].correctAns}`
         answerBtn2.textContent = `${prompts[5].answers[0]}`
         answerBtn1.textContent = `${prompts[5].answers[1]}`
         answerBtn4.textContent = `${prompts[5].answers[2]}`
-        console.log(image.src)
         image.src = `${prompts[5].image}`
         questionOfRound.innerHTML = `${prompts[5].question}`
         checkAnswer()
     }else if (round == 6) {
         playerScore.innerHTML = parseInt(score)
-        console.log(score)
         answerBtn2.textContent = `${prompts[6].correctAns}`
         answerBtn1.textContent = `${prompts[6].answers[0]}`
         answerBtn3.textContent = `${prompts[6].answers[1]}`
         answerBtn4.textContent = `${prompts[6].answers[2]}`
-        console.log(image.src)
         image.src = `${prompts[6].image}`
         questionOfRound.innerHTML = `${prompts[6].question}`
         checkAnswer()
     }else if (round == 7) {
         playerScore.innerHTML = parseInt(score)
-        console.log(score)
         answerBtn1.textContent = `${prompts[7].correctAns}`
         answerBtn2.textContent = `${prompts[7].answers[0]}`
         answerBtn3.textContent = `${prompts[7].answers[1]}`
         answerBtn4.textContent = `${prompts[7].answers[2]}`
-        console.log(image.src)
         image.src = `${prompts[7].image}`
         questionOfRound.innerHTML = `${prompts[7].question}`
         checkAnswer()
     }else if (round == 8) {
         playerScore.innerHTML = parseInt(score)
-        console.log(score)
         answerBtn3.textContent = `${prompts[8].correctAns}`
         answerBtn2.textContent = `${prompts[8].answers[0]}`
         answerBtn1.textContent = `${prompts[8].answers[1]}`
         answerBtn4.textContent = `${prompts[8].answers[2]}`
-        console.log(image.src)
         image.src = `${prompts[8].image}`
         questionOfRound.innerHTML = `${prompts[8].question}`
         checkAnswer()
     }else if (round == 9) {
         playerScore.innerHTML = parseInt(score)
-        console.log(score)
         answerBtn4.textContent = `${prompts[9].correctAns}`
         answerBtn2.textContent = `${prompts[9].answers[0]}`
         answerBtn3.textContent = `${prompts[9].answers[1]}`
         answerBtn1.textContent = `${prompts[9].answers[2]}`
-        console.log(image.src)
         image.src = `${prompts[9].image}`
         questionOfRound.innerHTML = `${prompts[9].question}`
         checkAnswer()
     }
-    if (round == 10 || timeLeft < 0){
+    if (round == 10){
         checkRank()
     }
 }
-
 
 function checkAnswer(event) {
     console.log(score)
@@ -302,9 +268,7 @@ function checkAnswer(event) {
         audioVar2.volume = .3;
         event.target.classList.add('animate__animated', 'animate__heartBeat')
         score += 1
-        
     }
-
     round += 1
     setTimeout(function() {
         event.target.classList.remove('animate__animated', 'animate__shakeX')
@@ -315,7 +279,6 @@ function checkAnswer(event) {
 }
 
 function checkRank() {
-    console.log(score)
     questionOfRound.style.margin = "70px -20px"
     questionOfRound.style.fontSize = "30px"
     currRound.style.visibility = "hidden"
@@ -381,17 +344,14 @@ function checkRank() {
 restartButton.addEventListener("click", restart)
 
 function restart() {
-
-    init()
-    
+    init()   
 }
-
 
 darkMode.addEventListener('click', function() {
     if (darkMode.innerHTML == 'Dark Mode') {
         body.style.backgroundImage = 'url(/images/Wallpaper-Space-HD.jpg)'
-        gameScreen.style.backgroundColor = "darkblue"
-        gameScreen.style.borderColor = "purple"
+        gameScreen.style.backgroundColor = "darkred"
+        gameScreen.style.borderColor = "darkblue"
         darkMode.innerHTML = 'Light Mode'
     }else {
         body.style.backgroundImage = 'url(/images/lightwall.jpg)'
