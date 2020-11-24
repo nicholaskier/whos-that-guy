@@ -134,7 +134,7 @@ function init() {
     let audioVar = new Audio(`/audio/OpeningCredits.mp3`)
     document.getElementById("body").addEventListener('click', e => {
         audioVar.play()
-        audioVar.volume = .2;
+        audioVar.volume = .1;
     })
 }
 
@@ -184,7 +184,6 @@ function render() {
         checkAnswer()
     }else if (round == 1) {
         playerScore.innerHTML = parseInt(score)
-        console.log(score)
         answerBtn3.textContent = `${prompts[1].correctAns}`
         answerBtn2.textContent = `${prompts[1].answers[0]}`
         answerBtn1.textContent = `${prompts[1].answers[1]}`
@@ -291,21 +290,27 @@ function render() {
 function checkAnswer(event) {
     console.log(score)
     currRound.innerHTML = parseInt(round) + 1
+    const choice = event.target
     if (event.target.textContent != `${prompts[round].correctAns}`){
         let audioVar1 = new Audio(`/audio/inputalgorithmnotaccepted_ep.mp3`)
         audioVar1.play()
         audioVar1.volume = .4;
-        
+        event.target.classList.add('animate__animated', 'animate__shakeX')
     } else {
         let audioVar2 = new Audio(`/audio/affirmative1_ep.mp3`)
         audioVar2.play()
         audioVar2.volume = .3;
+        event.target.classList.add('animate__animated', 'animate__heartBeat')
         score += 1
         
     }
-    
+    // event.target.classList.remove('animate__animated', 'animate__shakeX')
+    // event.target.classList.remove('animate__animated', 'animate__heartBeat')
     round += 1
-    render()
+    setTimeout(function() {
+        render()
+    }, 2300)
+
 }
 
 function checkRank() {

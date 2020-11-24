@@ -1,7 +1,7 @@
 # **Who's That Guy!** 
 ## *Star Trek Edition* 
 
-![startrekinsignia](https://ids.si.edu/ids/deliveryService?id=NASM-A20140238000-NASM2016-02427&max=300)
+![URL for Game](https://whos-that-guy.surge.sh)
 
 ### The Trivia Game for everytime you've seen an actor and wondered aloud, *"Wait, who's that guy again?"*
 
@@ -19,5 +19,11 @@ Join the fun with this interactive quiz game that endulges that deepest itch of 
 5. When the user clicks submit on the 10th question, the Q/A section should populate a message declaring different Star Trek ranks, depending on wether they answered 0-2, 3-5, 6-8, or 10 questions correctly. There should be accompanying sound effects and visual effects, depending on which rank they acquire. 
 6. The user should be able to hit a "restart game" button to try again and re-initialize the page.
 
+## Screenshots
+
+![screenshot](/images/Screenshot1.jpg) ![screenshot](/images/Screenshot2.jpg) ![screenshot](/images/Screenshot3.jpg)
 
 
+## Journey
+
+After Tic-Tac-Toe, the last thing I thought I would want to work on was another game. But considering the ease of the logic involved, I'm really glad I ended up with what I have. 
