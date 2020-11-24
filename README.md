@@ -52,7 +52,9 @@ The game was created using HTML/CSS/JS with VS Code.
 ## Attributions and Special Thanks
 
 Photos by [memoryalpha](https://memory-alpha.fandom.com) and [technocrazed](https://www.technocrazed.com)
+
 Sounds by [trekcore](https://www.trekcore.com) and [myinstants](https://www.myinstants.com)
+
 Animations by [animate](https://animate.style). Confetti by [JSD](https://www.jsdelivr.com)
 
 Massive thanks to the instructors, TA's and everyone in my amazing cohort for all their assistance and inspiration!
