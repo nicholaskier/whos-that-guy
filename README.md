@@ -8,6 +8,7 @@
 Join the fun with this interactive quiz game that endulges that deepest itch of not quite being able to put your finger on where you've seen that guy before. This time, with Star Trek characters! Some of these roles are one off cameos, some are recurring characters, but they all have one thing in common: You've seen that freaking guy before, what's his name again?
 
 ## Wire-Frame
+
 ![wireframe](https://i.imgur.com/anlsPI5.jpg)
 
 ### Goals
@@ -26,4 +27,32 @@ Join the fun with this interactive quiz game that endulges that deepest itch of 
 
 ## Journey
 
-After Tic-Tac-Toe, the last thing I thought I would want to work on was another game. But considering the ease of the logic involved, I'm really glad I ended up with what I have. 
+As you can see, my game morphed considerably through development. I decided to scrap the hovering title and outer elements entirely, in order for the game to be fully rendered inside the padd. I also removed the timer functionality from the game, as I felt that it gave the game a false sense of urgency that I didn't want the user to be feeling. Removing the "submit" button from the questions, in favor of simply submitting whatever answer the user selects felt more interactive, as well.
+
+## Rough Spots
+
+My main issue, so far, with most of my code is deciding on where and how to start. Pseudo-code helps immmensely, but there is certainly a kind of agoraphobia to seeing a blank JS file waiting for you to build something in it. 
+
+## Take-Aways
+
+The more I learn the lexicon of JS/CSS/HTML syntax and the more I can confidently call on that knowledge, the more fun I am able to have building something I am proud of. Figuring out little details, like sounds and animation, to give the game a bit of flair was super fun and I definitely will return to those ideas in the future.
+
+## Icebox Features
+
+1. Add additional questions, possibly one for every special apprearance in the franchise.
+2. Iterator to move through questions and answers without having to code every question out.
+3. More detailed styling to look more like a Star Trek padd
+4. More questions would mean a more varied ranking system, as well.
+5. Work out certain issues regarding the audio on reset.
+
+## Technology Used
+
+The game was created using HTML/CSS/JS with VS Code. 
+
+## Attributions and Special Thanks
+
+Photos by ![memoryalpha](https://memory-alpha.fandom.com) and ![technocrazed](https://www.technocrazed.com)
+Sounds by ![trekcore](https://www.trekcore.com) and ![myinstants](https://www.myinstants.com)
+Animations by ![animate](https://animate.style). Confetti by ![JSD](https://www.jsdelivr.com)
+
+Massive thanks to the instructors, TA's and everyone in my amazing cohort for all their assistance and inspiration!
