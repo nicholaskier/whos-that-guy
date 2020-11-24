@@ -254,9 +254,7 @@ function render() {
 }
 
 function checkAnswer(event) {
-    console.log(score)
     currRound.innerHTML = parseInt(round) + 1
-    const choice = event.target
     if (event.target.textContent != `${prompts[round].correctAns}`){
         let audioVar1 = new Audio(`/audio/inputalgorithmnotaccepted_ep.mp3`)
         audioVar1.play()
