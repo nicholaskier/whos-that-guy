@@ -304,10 +304,11 @@ function checkAnswer(event) {
         score += 1
         
     }
-    // event.target.classList.remove('animate__animated', 'animate__shakeX')
-    // event.target.classList.remove('animate__animated', 'animate__heartBeat')
+
     round += 1
     setTimeout(function() {
+        event.target.classList.remove('animate__animated', 'animate__shakeX')
+        event.target.classList.remove('animate__animated', 'animate__heartBeat')
         render()
     }, 2300)
 
